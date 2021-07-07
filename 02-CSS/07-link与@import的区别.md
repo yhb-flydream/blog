@@ -72,12 +72,76 @@
 - `type`
   - 这个属性被用于定义链接的内容的类型。这个属性的值应该是像 text/html，text/css 等 MIME 类型。这个属性常用的用法是定义链接的样式表，最常用的值是表明了 CSS 的 text/css。
 
+### link 使用
+
+```html
+<link href="style.css" rel="stylesheet" />
+```
+
+- 提供可替换的样式表
+
+用户可以在浏览器菜单 "查看>页面样式" 来选择网页的样式。通过这一办法，可以用多种样式浏览网页。
+
+```html
+<link href="default.css" rel="stylesheet" title="Default Style" />
+<link href="fancy.css" rel="alternate stylesheet" title="Fancy" />
+<link href="basic.css" rel="alternate stylesheet" title="Basic" />
+```
+
+- 提供用于不同用法上线文的图标
+
+您可以在同一页面上包含指向多个不同图标的链接，浏览器将使用 rel 和 sizes 值作为提示来选择最适合其特定上下文的图标。
+
+```html
+<!-- third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon144.png" />
+<!-- iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon114.png" />
+<!-- first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon72.png" />
+<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="favicon57.png" />
+<!-- basic favicon -->
+<link rel="icon" href="favicon32.png" />
+```
+
+- 通过媒体查询有条件地加载资源
+
+您可以在 media 属性中提供媒体类型或查询; 然后，只有在媒体条件为 true 时，才会加载此资源。
+
+```html
+<link href="print.css" rel="stylesheet" media="print" />
+<link href="mobile.css" rel="stylesheet" media="all" />
+<link href="desktop.css" rel="stylesheet" media="screen and (min-width: 600px)" />
+<link href="highres.css" rel="stylesheet" media="screen and (min-resolution: 300dpi)" />
+```
+
+- 样式表加载事件
+
+你能够通过监听发生在样式表上的事件知道什么时候样式表加载完毕。同样的，你能够通过监听 error 事件检测到是否在加载样式表的过程中出现错误。
+
+```html
+<link rel="stylesheet" href="mystylesheet.css" onload="sheetLoaded()" onerror="sheetError()" />
+
+<script>
+  function sheetLoaded() {
+    // Do something interesting; the sheet has been loaded
+  }
+
+  function sheetError() {
+    alert('An error occurred loading the stylesheet!')
+  }
+</script>
+```
+
+> 注意： 当样式表以及它引用的部分全部加载完毕，load 事件就会在样式表应用到内容之前立即触发。
+
 ## @import
 
-> CSS@规则，用于从其他样式表导入样式规则。
+> CSS@ 规则，用于从其他样式表导入样式规则。
 > 这些规则必须先于所有其他类型的规则，@charset 规则除外; 因为它不是一个嵌套语句，@import 不能在条件组的规则中使用。
 
-### 使用
+### @import 使用
 
 ```css
 @import url;
@@ -85,7 +149,9 @@
 ```
 
 - `url`
-  - 是一个表示要引入资源位置的 `<string>` 或者 `<uri>` 。 这个 URL 可以是绝对路径或者相对路径。 要注意的是这个 URL 不需要指明一个文件；可以只指明包名，然后合适的文件会被自动选择 (e.g. chrome://communicator/skin/).
+  - 是一个表示要引入资源位置的 `<string>` 或者 `<uri>` 。
+  - 这个 URL 可以是绝对路径或者相对路径。
+  - 要注意的是这个 URL 不需要指明一个文件；可以只指明包名，然后合适的文件会被自动选择 (e.g. chrome://communicator/skin/).
 - `list-of-media-queries`
   - 是一个逗号分隔的 **媒体查询** 条件列表，决定通过 URL 引入的 CSS 规则 在什么条件下应用。如果浏览器不支持列表中的任何一条媒体查询条件，就不会引入 URL 指明的 CSS 文件。
 
