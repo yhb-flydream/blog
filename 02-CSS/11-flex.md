@@ -2,13 +2,29 @@
 
 > **参考**
 >
+> [《使用 CSS 弹性盒子》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/conflicting/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+>
 > [《flex》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
 >
 > [《Flex 布局教程 - 语法篇》(作者：阮一峰)【来源：阮一峰的网络日志】](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 >
 > [《Flex 布局教程 - 实例篇》(作者：阮一峰)【来源：阮一峰的网络日志】](https://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 >
-> [《CSS3 Flexbox 布局完全指南(图解 Flexbox 布局详细教程)》【来源：WEB前端开发】](https://www.css88.com/archives/8629)
+> [《图解 CSS3 Flexbox 属性》（作者：大漠）【来源：W3cplus】](https://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html)
+>
+> [《FLEXBOX》（作者：大漠）【来源：W3cplus】](https://www.w3cplus.com/blog/tags/157.html)
+>
+> [《Flexbox 布局（CSS3 弹性布局，Flexible Box）之基本介绍》【来源：WEB 前端开发】](https://www.html.cn/archives/5726)
+>
+> [《Flexbox 布局（CSS3 弹性布局，Flexible Box）之 基本概念解析》【来源：WEB 前端开发】](https://www.html.cn/archives/5741)
+>
+> [《【Flexbox 布局教程】CSS3 Flexbox 属性可视化指南》【来源：WEB 前端开发】](https://www.html.cn/archives/5744)
+>
+> [《【Flexbox 布局教程】Flexbox 布局是如何工作的 – 用大彩图和 GIF 动画解释》【来源：WEB 前端开发】](https://www.html.cn/archives/7212)
+>
+> [《【Flexbox 布局教程】更多关于 Flexbox 布局如何工作的?-?用大彩图和 GIF 动画解释》【来源：WEB 前端开发】](https://www.html.cn/archives/7236)
+>
+> [《CSS3 Flexbox 布局完全指南(图解 Flexbox 布局详细教程)》【来源：WEB 前端开发】](https://www.html.cn/archives/8629)
 
 [TOC]
 
@@ -35,24 +51,6 @@
   - `column` 主轴垂直，起点在上沿（从上到下）
   - `column-reverse` 主轴垂直，起点在下沿（从下到上）
 
-### `justify-content`（定义项目在主轴上的对齐方式）
-
-- `flex-start | flex-end | center | space-between | space-around`
-  - `flex-start`（默认值）左对齐
-  - `flex-end` 右对齐
-  - `center` 居中
-  - `space-between` 两端对齐，项目之间距离相等
-  - `space-around` 每个项目两侧间距相等，即两个项目之间间距是一侧的二倍
-
-### `align-item`（项目在交叉轴方向上如何对齐）
-
-- `flex-start | flex-end | center | baseline | stretch`
-  - `stretch`（默认值）如果项目未设置高度或为 auto，将占满整个容器
-  - `flex-start` 顶端对齐
-  - `flex-end` 底端对齐
-  - `center` 垂直居中
-  - `baseline` 第一行文字基线对齐
-
 ### `flex-wrap`（如果一条轴线排布不下如何换行）
 
 - `nowrap | wrap | wrap-reverse`
@@ -61,6 +59,26 @@
   - `wrap-reverse` 换行，第一行在下方
 
 ### `flex-flow`（是`flex-direction`和`flex-wrap`简写）默认`row nowrap`
+
+### `justify-content`（定义项目在主轴上的对齐方式）
+
+- `flex-start | flex-end | center | space-between | space-around | space-evenly`
+  - `flex-start`（默认值）左对齐
+  - `flex-end` 右对齐
+  - `center` 居中
+  - `space-between` 两端对齐，项目之间距离相等
+  - `space-around` 每个项目两侧间距相等，即两个项目之间间距是一侧的二倍
+  - `space-evenly` 任何两个 flex 项之间的间距（以及到 flex 容器边缘的空间）相等
+
+### `align-item`（项目在交叉轴方向上如何对齐）
+
+- `flex-start | flex-end | center | baseline | stretch`
+
+  - `stretch`（默认值）如果项目未设置高度或为 auto，将占满整个容器
+  - `flex-start` 顶端对齐
+  - `flex-end` 底端对齐
+  - `center` 垂直居中
+  - `baseline` 第一行文字基线对齐
 
 - `<flex-direction> || <flex-wrap>`
 
