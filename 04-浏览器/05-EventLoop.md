@@ -1,21 +1,36 @@
 # Event Loop
 
-- 参考
-  [MDN 并发模型与事件循环](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
-  [从一道题浅说 JavaScript 的事件循环](https://github.com/dwqs/blog/issues/61)
-  [什么是 Event Loop？](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
-  [从一道面试题来理解 JS 事件循环](https://xieyufei.com/2019/12/30/Quiz-Eventloop.html)
-  [js 事件循环机制(Event Loop)](https://www.cnblogs.com/yalong/p/10369477.html)
-  [浅析 JS 中的 EventLoop 事件循环（新手向）](https://segmentfault.com/a/1190000019313028)
-  [译文：JS 事件循环机制（event loop）之宏任务、微任务](https://segmentfault.com/a/1190000014940904)
-  [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly)
-  [前端内参 壹.2.8 Event Loop](https://coffe1891.gitbook.io/frontend-hard-mode-interview/1/1.2.8)
-  [你真的理解$nextTick 么](https://juejin.im/post/5cd9854b5188252035420a13)
-  [总是一知半解的 Event Loop](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226694&idx=1&sn=01908e1c5089010733e723c99947b311&chksm=bd495bc28a3ed2d4d92c024910eb2b0367d0b22ee8e2587fee9253a359ebf99dba63338f3ccb&scene=21#wechat_redirect)
+> **参考**
+>
+> [《并发模型与事件循环》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
+>
+> [《一次弄懂 Event Loop（彻底解决此类面试问题）》(作者：光光同学)【来源：掘金】](https://juejin.cn/post/6844903764202094606)
+>
+> [《带你彻底弄懂 Event Loop》(作者：liuxuan)【来源：思否】](https://segmentfault.com/a/1190000016278115)
+>
+> [《从一道题浅说 JavaScript 的事件循环》(作者：dwqs)【来源：github】](https://github.com/dwqs/blog/issues/61)
+>
+> [《什么是 Event Loop？》(作者：阮一峰)【来源：阮一峰的网络日志】](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
+>
+> [《从一道面试题来理解 JS 事件循环》(作者：)【来源：】](https://xieyufei.com/2019/12/30/Quiz-Eventloop.html)
+>
+> [《js 事件循环机制(Event Loop)》(作者：)【来源：】](https://www.cnblogs.com/yalong/p/10369477.html)
+>
+> [《浅析 JS 中的 EventLoop 事件循环（新手向）》(作者：)【来源：】](https://segmentfault.com/a/1190000019313028)
+>
+> [《译文：JS 事件循环机制（event loop）之宏任务、微任务》(作者：)【来源：】](https://segmentfault.com/a/1190000014940904)
+>
+> [《Tasks, microtasks, queues and schedules》(作者：)【来源：】](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+>
+> [《前端内参 壹.2.8 Event Loop》(作者：)【来源：】](https://coffe1891.gitbook.io/frontend-hard-mode-interview/1/1.2.8)
+>
+> [《你真的理解$nextTick 么》(作者：)【来源：】](https://juejin.im/post/5cd9854b5188252035420a13)
+>
+> [《总是一知半解的 Event Loop》(作者：)【来源：】](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226694&idx=1&sn=01908e1c5089010733e723c99947b311&chksm=bd495bc28a3ed2d4d92c024910eb2b0367d0b22ee8e2587fee9253a359ebf99dba63338f3ccb&scene=21#wechat_redirect)
 
 [TOC]
 
-JavaScript 就是一门`单线程`的`非阻塞`的`脚本语言`。
+**JavaScript 就是一门`单线程`的`非阻塞`的`脚本语言`。**
 
 单线程意味着，JavaScript 代码在执行的任何时候，都`只有一个主线程`来处理所有的任务。那么 JavaScript 为什么是单线程，难道不能实现为多线程吗？
 
@@ -29,7 +44,7 @@ JavaScript 是可以通过 Web Worker 开启多线程，但是这个新开线程
 在 JavaScript 中怎么区分它们呢？
 
 - 主线程
-  - 就是访问到的 script 标签里面包含的内容
+  - 就是访问到的 `script` 标签里面包含的内容
   - 或者是直接访问某一个 js 文件的时候，里面的可以在当前作用域直接执行的所有内容（执行的方法，new 出来的对象等）
 - 宏任务（macrotask）
   - setTimeout
