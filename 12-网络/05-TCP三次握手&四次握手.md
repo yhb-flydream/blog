@@ -11,6 +11,10 @@
 > [《TCP 如何保证传输可靠性》(作者：cbjcry)【来源：CSDN】](https://blog.csdn.net/cbjcry/article/details/84925028)
 >
 > [《TCP 协议中的三次握手和四次挥手(图解)》(作者：whuslei)【来源：CSDN】](https://blog.csdn.net/whuslei/article/details/6667471)
+>
+> [《关于 TCP 三次握手和四次挥手，满分回答在此》(作者：飞天小牛肉)【来源：腾讯云社区】](https://cloud.tencent.com/developer/article/1793782)
+>
+> [《面试官，不要再问我三次握手和四次挥手》(作者：老刘)【来源：知乎】](https://zhuanlan.zhihu.com/p/86426969)
 
 [TOC]
 

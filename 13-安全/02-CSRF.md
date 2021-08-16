@@ -3,6 +3,8 @@
 > **参考**
 >
 > [《前端安全系列之二：如何防止 CSRF 攻击？》(作者：美团技术团队)【来源：掘金】](https://juejin.cn/post/6844903689702866952)
+>
+> [《浅谈 CSRF 攻击方式》(作者：陈曦明)【来源：博客园】](https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)
 
 [TOC]
 
@@ -12,12 +14,12 @@
 
 一个典型的 CSRF 攻击有着如下的流程：
 
-- 受害者登录 a.com，并保留了登录凭证（Cookie）。
-- 攻击者引诱受害者访问了 b.com。
-- b.com 向 a.com 发送了一个请求：a.com/act=xx。浏览器会…
-- a.com 接收到请求后，对请求进行验证，并确认是受害者的凭证，误以为是受害者自己发送的请求。
-- a.com 以受害者的名义执行了 act=xx。
-- 攻击完成，攻击者在受害者不知情的情况下，冒充受害者，让 a.com 执行了自己定义的操作。
+- 受害者登录 `a.com`，并保留了登录凭证（Cookie）。
+- 攻击者引诱受害者访问了 `b.com`。
+- `b.com` 向 `a.com` 发送了一个请求：`a.com/act=xx`。浏览器会默认携带a.com的Cookie。
+- `a.com` 接收到请求后，对请求进行验证，并确认是受害者的凭证，误以为是受害者自己发送的请求。
+- `a.com` 以受害者的名义执行了 act=xx。
+- 攻击完成，攻击者在受害者不知情的情况下，冒充受害者，让 `a.com` 执行了自己定义的操作。
 
 ## 几种常见的攻击类型
 
@@ -135,7 +137,7 @@ CSRF 通常从第三方网站发起，被攻击的网站无法防止攻击发生
 | Origin When Cross Origin   | (strict) origin-when-crossorigin | -            |
 | Unsafe URL                 | unsafe-url                       | always       |
 
-根据上面的表格因此需要把 Referrer Policy 的策略设置成 same-origin，对于同源的链接和引用，会发送 Referer，referer 值为 Host 不带 Path；跨域访问则不携带 Referer。例如：aaa.com 引用 bbb.com 的资源，不会发送 Referer。
+根据上面的表格因此需要把 Referrer Policy 的策略设置成 same-origin，对于同源的链接和引用，会发送 Referer，referer 值为 Host 不带 Path；跨域访问则不携带 Referer。例如：`aaa.com` 引用 `bbb.com` 的资源，不会发送 Referer。
 
 设置 Referrer Policy 的方法有三种：
 
@@ -222,13 +224,13 @@ GET https://example.com/addComment?comment=XXX&dest=orderId
 
 对于来自黑客自己的网站，我们无法防护。但对其他情况，那么如何防止自己的网站被利用成为攻击的源头呢？
 
-- 严格管理所有的上传接口，防止任何预期之外的上传内容（例如HTML）。
-- 添加 `Header X-Content-Type-Options: nosniff` 防止黑客上传HTML内容的资源（例如图片）被解析为网页。
+- 严格管理所有的上传接口，防止任何预期之外的上传内容（例如 HTML）。
+- 添加 `Header X-Content-Type-Options: nosniff` 防止黑客上传 HTML 内容的资源（例如图片）被解析为网页。
 - 对于用户上传的图片，进行转存或者校验。不要直接使用用户填写的图片链接。
 - 当前用户打开其他用户填写的链接时，需告知风险（这也是很多论坛不允许直接在内容中发布外域链接的原因之一，不仅仅是为了用户留存，也有安全考虑）。
 
-## CSRF其他防范措施
+## CSRF 其他防范措施
 
-### CSRF测试
+### CSRF 测试
 
-### CSRF监控
+### CSRF 监控
