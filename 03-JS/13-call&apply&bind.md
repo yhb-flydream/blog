@@ -51,7 +51,7 @@ Function.prototype.call2 = function (context) {
 // function myCall(context) {
 //   let [context = window, ...args] = [...arguments]
 //   context = context || window
-//   let sym = new Symbol()
+//   let sym = Symbol()
 //   context[sym] = this
 //   let result = context[sym](...args)
 //   delete context[sym]
@@ -102,7 +102,7 @@ Function.prototype.apply2 = function (context, arr) {
 // function myApply(context) {
 //   let [context, args = []] = arguments
 //   context = context || window
-//   let sym = new Symbol()
+//   let sym = Symbol()
 //   context[sym] = this
 //   let result constext[sym](args)
 //   delete context[sym]

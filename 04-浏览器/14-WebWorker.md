@@ -18,7 +18,7 @@
 
 **worker 的上下文：**
 
-worker 将运行在与当前 window 不同的另一个全局上下文中，这个上下文由一个对象表示，标准情况下为 DedicatedWorkerGlobalScope （标准 workers 由单个脚本使用; 共享 workers 使用 SharedWorkerGlobalScope (en-US)）。一个专用 worker 仅仅能被首次生成它的脚本使用，而共享 worker 可以同时被多个脚本使用。
+worker 将运行在与当前 window 不同的另一个全局上下文中，这个上下文由一个对象表示，标准情况下为 DedicatedWorkerGlobalScope （标准 workers 由单个脚本使用; 共享 workers 使用 SharedWorkerGlobalScope）。**一个专用 worker 仅仅能被首次生成它的脚本使用，而共享 worker 可以同时被多个脚本使用**。
 
 因此，在 Worker 内通过 window 获取全局作用域 (而不是 self) 将返回错误。
 
@@ -26,17 +26,17 @@ worker 将运行在与当前 window 不同的另一个全局上下文中，这�
 
 你可以在 worker 线程中运行任意的代码，但注意存在一些例外：
 
-- 直接在 worker 线程中操纵 DOM 元素；
-- 或使用 window 对象中的某些方法和属性
-- 大部分 window 对象的方法和属性是可以使用的，包括 WebSockets，以及诸如 IndexedDB 和 FireFox OS 中独有的 Data Store API 这一类数据存储机制。
+- 直接在 worker 线程中**操纵 DOM 元素**；
+- 或**使用 window 对象中的某些方法和属性**
+- **大部分 window 对象的方法和属性是可以使用的**，包括 WebSockets，以及诸如 IndexedDB 和 FireFox OS 中独有的 Data Store API 这一类数据存储机制。
 
 **worker 与主线程怎么通信：**
 
-主线程和 worker 线程相互之间使用 postMessage() 方法来发送信息, 并且通过 onmessage 这个 event handler 来接收信息（传递的信息包含在 Message 这个事件的 data 属性内) 。数据的交互方式为传递副本，而不是直接共享数据。
+主线程和 worker 线程相互之间使用 `postMessage()` 方法来发送信息, 并且通过 `onmessage` 这个 event handler 来接收信息（传递的信息包含在 Message 这个事件的 data 属性内) 。_数据的交互方式为传递副本，而不是直接共享数据_。
 
 **worker 生成新的 worker：**
 
-worker 可以另外生成新的 worker，这些 worker 与它们父页面的宿主相同。 此外，worker 可以通过 XMLHttpRequest 来访问网络，只不过 XMLHttpRequest 的 responseXML 和 channel 这两个属性的值将总是 null 。
+worker 可以另外生成新的 worker，这些 worker 与它们父页面的宿主相同。此外，worker 可以通过 XMLHttpRequest 来访问网络，只不过 XMLHttpRequest 的 responseXML 和 channel 这两个属性的值将总是 null 。
 
 **其他 worker：**
 

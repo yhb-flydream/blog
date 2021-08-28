@@ -42,24 +42,23 @@ JavaScript 是可以通过 Web Worker 开启多线程，但是这个新开线程
 
 非阻塞靠的就是 event loop（事件循环）。
 
-`event loop` 它最主要是分三部分：**主线程**、**宏任务（macrotask）**、**微任务（microtask）**。
+`event loop` 它最主要是分三部分：**主线程**、**宏任务（macrotask、task）**、**微任务（microtask、job）**。
 在 JavaScript 中怎么区分它们呢？
 
 - 主线程
   - 就是访问到的 `script` 标签里面包含的内容
   - 或者是直接访问某一个 js 文件的时候，里面的可以在当前作用域直接执行的所有内容（执行的方法，new 出来的对象等）
-- 宏任务（macrotask）
+- 宏任务（macrotask/task）
   - setTimeout
   - setInterval
   - setImmediate
   - I/O
   - UI rendering
-- 微任务（microtask）
-
+- 微任务（microtask/job）
   - promise.then
   - process.nextTick
-  - Object.observe(已废弃)
-  - MutationObserver(html5 新特性)
+  - Object.observe (已废弃)
+  - MutationObserver (html5 新特性)
 
 **执行顺序：**
 
@@ -70,7 +69,7 @@ JavaScript 是可以通过 Web Worker 开启多线程，但是这个新开线程
 5. 检查微任务队列中是否有微任务，有则依次出微任务队列放到调用栈执行，直到微任务队列为空
    - 在每个微任务执行过程中：遇到宏任务，放到宏任务队列；遇到微任务，放到此次微任务队列队尾执行
 6. 从宏任务队列里面取出一个宏任务执行
-   - 如果宏任务里面还会有微任务，放到微任务队列；如果宏任务里面还会有宏任务，放到宏任务队列
+   - 如果宏任务里面有微任务，放到微任务队列；如果宏任务里面有宏任务，放到宏任务队列
 7. 然后再依次执行`5 ~ 6`的过程
 
 - **代码分析：**

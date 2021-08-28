@@ -27,6 +27,8 @@
 > [《史上最易读懂的 Promise/A+ 完全实现》(作者：谢然)【来源：知乎】](https://zhuanlan.zhihu.com/p/21834559)
 >
 > [《死磕 36 个 JS 手写题（搞懂后，提升真的大）》(作者：布兰)【来源：大海我来了】](https://mp.weixin.qq.com/s/sDZudDS2jn8PZrSAtkicTg)
+>
+> [《深入 Promise(一)——Promise 实现详解》(作者：nswbmw)【来源：知乎】](https://zhuanlan.zhihu.com/p/25178630)
 
 [TOC]
 
@@ -68,12 +70,8 @@ class myPromise {
 
   then(onFulfilled, onRejected) {
     onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : (v) => v
-    onRejected =
-      typeof onRejected === 'function'
-        ? onFulfilled
-        : (err) => {
-            throw err
-          }
+    onRejected = typeof onRejected === 'function' ? onFulfilled : (err) => { throw err }
+
     let promise2 = new myPromise((resolve, reject) => {
       if (this.status === FULFILLED) {
         setTimeout(() => {
@@ -195,5 +193,218 @@ myPromise.race = function(promiseArr) {
       })
     })
   })
+}
+```
+
+```js
+function Promise(executor) {
+  const self = this
+
+  self.status = 'pending'
+  self.onResolvedCallback = []
+  self.onRejectedCallback = []
+
+  function resolve(value) {
+    if (value instanceof Promise) {
+      return value.then(resolve, reject)
+    }
+
+    setTimeout(function () {
+      if (self.status === 'pending') {
+        self.status === 'resolved'
+        self.data = value
+        for (let i = 0; i < self.onResolvedCallback.length; i++) {
+          self.onResolvedCallback[i](value)
+        }
+      }
+    })
+  }
+
+  function reject(reason) {
+    setTimeout(function () {
+      if (self.status === 'pending') {
+        self.status = 'rejected'
+        self.data = reason
+        for (let i = 0; i < self.onRejectedCallback.length; i++) {
+          self.onRejectedCallback[i](reason)
+        }
+      }
+    })
+  }
+
+  try {
+    excutor(resolve, reject)
+  } catch (reason) {
+    reject(reason)
+  }
+}
+
+Promise.prototype.then = function (onResolved, onRejected) {
+  const self = this
+  let promise2
+
+  onResolved =
+    typeof onResolved === 'function'
+      ? onResolved
+      : function (v) {
+          return v
+        }
+  onRejected =
+    typeof onRejected === 'function'
+      ? onRejected
+      : function (err) {
+          throw err
+        }
+
+  if (self.status === 'resolved') {
+    return (promise2 = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        try {
+          let x = onResolved(self.data)
+          resolvePromise(promise2, x, resolve, reject)
+        } catch (reason) {
+          reject(reason)
+        }
+      })
+    }))
+  }
+
+  if (self.status === 'rejected') {
+    return (promise2 = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        try {
+          let x = onRejected(self.data)
+          resolvePromise(promise2, x, resolve, reject)
+        } catch (reason) {
+          reject(reason)
+        }
+      })
+    }))
+  }
+
+  if (self.status === 'pending') {
+    return (promise2 = new Promise(function (resolve, reject) {
+      self.onResolvedCallback.push(function (value) {
+        try {
+          let x = onResolved(value)
+          resolvePromise(promise2, x, resolve, reject)
+        } catch (reason) {
+          reject(reason)
+        }
+      })
+
+      self.onRejectedCallback.push(function (reason) {
+        try {
+          let x = onRejected(reason)
+          resolvePromise(promise2, x, resolve, reject)
+        } catch (reason) {
+          reject(reason)
+        }
+      })
+    }))
+  }
+
+  // return (promise2 = new Promise(function (resolve, reject) {
+  //   if (self.status === 'resolved') {
+  //     setTimeout(function () {
+  //       try {
+  //         let x = onResolved(self.data)
+  //         resolvePromise(promise2, x, resolve, reject)
+  //       } catch (reason) {
+  //         reject(reason)
+  //       }
+  //     })
+  //   }
+  //   if (self.status === 'rejected') {
+  //     setTimeout(function () {
+  //       try {
+  //         let x = onRejected(self.data)
+  //         resolvePromise(promise2, x, resolve, reject)
+  //       } catch (reason) {
+  //         reject(reason)
+  //       }
+  //     })
+  //   }
+  //   if (self.status === 'pending') {
+  //     self.onResolvedCallback.push(function (value) {
+  //       try {
+  //         let x = onResolved(value)
+  //         resolvePromise(promise2, x, resolve, reject)
+  //       } catch (reason) {
+  //         reject(reason)
+  //       }
+  //     })
+  //     self.onRejectedCallback.push(function (value) {
+  //       try {
+  //         let x = onRejected(value)
+  //         resolvePromise(promise2, x, resolve, reject)
+  //       } catch (reason) {
+  //         reject(reason)
+  //       }
+  //     })
+  //   }
+  // }))
+}
+
+function resolvePromise(promise, x, resolve, reject) {
+  let then
+  let thenCalledOrThrow = false
+
+  if (promise2 === x) {
+    return reject(new TypeError('Chaining cycle detected for promise!'))
+  }
+
+  if (x instanceof Promise) {
+    if (x.status === 'pending') {
+      x.then(function (v) {
+        resolvePromise(promise2, x, resolve, reject)
+      }, reject)
+    } else {
+      x.then(resolve, reject)
+    }
+    return
+  }
+
+  if (x !== null && (typeof x === 'object' || typeof x === 'function')) {
+    try {
+      then = x.then
+      if (typeof then === 'function') {
+        then.call(
+          x,
+          function rs(y) {
+            if (thenCalledOrThrow) return
+            thenCalledOrThrow = true
+            return resolvePromise(promise2, y, resolve, reject)
+          },
+          function rj(r) {
+            if (thenCalledOrThrow) return
+            thenCalledOrThrow = true
+            return reject(r)
+          }
+        )
+      } else {
+        resolve(x)
+      }
+    } catch (e) {
+      if (thenCalledOrThrow) return
+      thenCalledOrThrow = true
+      return reject(e)
+    }
+  } else {
+    resolve(x)
+  }
+}
+
+Promise.prototype.catch = function (onRejected) {
+  return this.then(null, onRejected)
+}
+
+Promise.deferred = Promise.defer = function () {
+  let dfd = {}
+  dfd.promise = new Promise(function (resolve, reject) {
+    dfd.resolve = resolve
+    dfd.reject = reject
+  })
+  return dfd
 }
 ```

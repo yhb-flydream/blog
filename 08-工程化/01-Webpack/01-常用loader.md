@@ -17,13 +17,12 @@
 
 ## loader 有什么用
 
-loader 用于对模块的源代码进行转换。
-
-loader 可以使你在 import 或"加载"模块时预处理文件。
-
-loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS 文件！
-
-loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
+- 用于对模块的源代码进行转换。
+- 可以使你在 import 或"加载"模块时预处理文件。
+- 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。
+- 甚至允许你直接在 JavaScript 模块中 import CSS 文件！
+- 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。
+- 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
 
 **本质上，webpack loader 将所有类型的文件，转换为应用程序的依赖图（和最终的 bundle）可以直接引用的模块。**
 

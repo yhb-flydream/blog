@@ -3,6 +3,8 @@
 > **参考**
 >
 > [《通俗易懂：什么是 DNS 污染？什么是 DNS 劫持？区别又是什么？》(作者：)【来源：开心技术乐园】](https://www.hack520.com/330.html)
+>
+> [《DNS 污染与劫持》(作者：wqbin)【来源：博客园】](https://www.cnblogs.com/wqbin/p/12118458.html)
 
 [TOC]
 
