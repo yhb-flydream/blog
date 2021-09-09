@@ -111,12 +111,12 @@
 - 如果一个项目的 flex-shrink 属性为 0，其他项目都为 1，则空间不足时，前者不缩小
 - **负值对该属性无效**
 
-### `felx-basis`定义了分配多余空间之间，项目占主轴的空间，浏览器根据这个属性，计算主轴是否多余空间，默认 auto，即项目本来空间
+### `felx-basis`定义了分配多余空间之间，项目占主轴的空间，浏览器根据这个属性，计算主轴是否多余空间，`默认 auto`，即项目本来空间
 
 - `flex-basis: <length> | auto; /* default auto */`
 - 它可以设为跟 width 或 height 属性一样的值（比如 350px），则项目将占据固定空间
 
-### `flex`是`flex-grow、flex-shrink、flex-basis`的简写，默认值`0 1 auto`，后两个属性可选
+### `flex`是`flex-grow、flex-shrink、flex-basis`的简写，默认`0 1 auto`，后两个属性可选
 
 - `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
 - 该属性有两个快捷值：`auto（1 1 auto）`和`none（0 0 auto）`
