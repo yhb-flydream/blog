@@ -6,6 +6,8 @@
 >
 > [《使用 Promise》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises)
 >
+> [《【翻译】Promises/A+规范》(作者：于明昊)【来源：ituring】](https://www.ituring.com.cn/article/66566)
+>
 > [《JavaScript Promise 迷你书（中文版）》(作者：azu / 翻译：liubin、kaku、honnkyou)【来源：liubin.org】](http://liubin.org/promises-book/)
 >
 > [《JavaScript Promise：去而复返》(作者：司徒正美)【来源：博客园】](https://www.cnblogs.com/rubylouvre/p/3495286.html)
@@ -29,6 +31,8 @@
 > [《死磕 36 个 JS 手写题（搞懂后，提升真的大）》(作者：布兰)【来源：大海我来了】](https://mp.weixin.qq.com/s/sDZudDS2jn8PZrSAtkicTg)
 >
 > [《深入 Promise(一)——Promise 实现详解》(作者：nswbmw)【来源：知乎】](https://zhuanlan.zhihu.com/p/25178630)
+>
+> [《Promise的队列与setTimeout的队列有何关联？》【来源：知乎】](https://www.zhihu.com/question/36972010)
 
 [TOC]
 
