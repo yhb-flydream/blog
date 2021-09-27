@@ -7,3 +7,5 @@
 > [《vue 虚拟 dom 和 diff 算法详解》(作者：ら陈佚晨)【来源：CSDN】](https://blog.csdn.net/weixin_42707287/article/details/113994483)
 >
 > [《15 张图，20 分钟吃透 Diff 算法核心原理，我说的！！！》(作者：Sunshine_Lin)【来源：掘金】](https://juejin.cn/post/6994959998283907102)
+>
+> [《DIff 算法看不懂就一起来砍我(带图)》(作者：渣渣 xiong)【来源：掘金】](https://juejin.cn/post/7000266544181674014)
