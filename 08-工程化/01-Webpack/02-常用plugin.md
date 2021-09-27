@@ -7,13 +7,14 @@
 > [《webpack 之 loader 和 plugin 简介》(作者：赵鹏|美团点评点餐)【来源：掘金】](https://juejin.cn/post/6844903489458405390)
 >
 > [《1-5 使用 Plugin》(作者：吴浩麟)【来源：吴浩麟】](https://webpack.wuhaolin.cn/1%E5%85%A5%E9%97%A8/1-5%E4%BD%BF%E7%94%A8Plugin.html)
-> [《总结18个webpack插件，总会有你想要的！》(作者：lzg9527)【来源：掘金】](https://juejin.cn/post/6844904193589772301)
+>
+> [《总结 18 个 webpack 插件，总会有你想要的！》(作者：lzg9527)【来源：掘金】](https://juejin.cn/post/6844904193589772301)
 
 [TOC]
 
 ## plugin 是什么
 
-webpack 插件是一个具有 apply 属性的 JavaScript 对象。apply 属性会被 webpack compiler 调用，并且 compiler 对象可在整个编译生命周期访问。
+**webpack 插件是一个具有 apply 属性的 JavaScript 对象**。apply 属性会被 webpack compiler 调用，并且 compiler 对象可在整个编译生命周期访问。
 
 ## plugin 有什么用
 

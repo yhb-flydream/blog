@@ -2,12 +2,13 @@
 
 > **参考**
 >
-> [《loader》(作者：https://www.webpackjs.com/)【来源：https://www.webpackjs.com/】](https://www.webpackjs.com/concepts/loaders/)
+> [《loader》【来源：webpackjs】](https://www.webpackjs.com/concepts/loaders/)
 >
 > [《webpack 之 loader 和 plugin 简介》(作者：赵鹏|美团点评点餐)【来源：掘金】](https://juejin.cn/post/6844903489458405390)
 >
 > [《1-4 使用 Loader》(作者：吴浩麟)【来源：吴浩麟】](https://webpack.wuhaolin.cn/1%E5%85%A5%E9%97%A8/1-4%E4%BD%BF%E7%94%A8Loader.html)
-> [《分享12个Webpack中常用的Loader》(作者：蛙人)【来源：前端娱乐圈】](https://mp.weixin.qq.com/s/uITo5FLHeu4BQ6psfGYddg)
+>
+> [《分享 12 个 Webpack 中常用的 Loader》(作者：蛙人)【来源：前端娱乐圈】](https://mp.weixin.qq.com/s/uITo5FLHeu4BQ6psfGYddg)
 
 [TOC]
 
