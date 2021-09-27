@@ -1,5 +1,7 @@
 # Iterator 和 for...of 循环
 
+[TOC]
+
 ## Iterator（遍历器）的概念
 
 JavaScript 原有的表示“**集合**”的数据结构，主要是数组（Array）和对象（Object），ES6 又添加了 Map 和 Set。

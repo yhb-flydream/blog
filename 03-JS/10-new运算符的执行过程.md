@@ -15,9 +15,9 @@ new 运算符：**创建一个用户定义的对象类型的实例或具有构�
 ```js
 function objFactory() {
   var obj = Object.create(null)
-  constructor = [].shift.call(arguments)
+  constructor = [].shift.call(arguments)[0]
   obj.__proto__ = constructor.prototype
-  var ret = constructor.apply(obj, arguments)
+  var ret = constructor.apply(obj, [].shift.call(arguments).splice(1))
   return typeof ret === 'object' || typeof ret === 'function' ? ret : obj
 }
 ```
