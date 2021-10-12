@@ -3,6 +3,8 @@
 > **参考**
 >
 > [Vue SSR 指南](https://ssr.vuejs.org/zh/)
+>
+> [开箱即用的 SSR 框架](https://doc.ssr-fc.com/)
 
 ## 什么是服务器端渲染 (SSR)？
 
