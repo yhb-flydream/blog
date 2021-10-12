@@ -32,7 +32,9 @@
 >
 > [《深入 Promise(一)——Promise 实现详解》(作者：nswbmw)【来源：知乎】](https://zhuanlan.zhihu.com/p/25178630)
 >
-> [《Promise的队列与setTimeout的队列有何关联？》【来源：知乎】](https://www.zhihu.com/question/36972010)
+> [《Promise 的队列与 setTimeout 的队列有何关联？》【来源：知乎】](https://www.zhihu.com/question/36972010)
+>
+> [《手写一个 Promise/A+,完美通过官方 872 个测试用例》(作者：\_蒋鹏飞)【来源：CSDN】](https://blog.csdn.net/dennis_jiang/article/details/105389519)
 
 [TOC]
 

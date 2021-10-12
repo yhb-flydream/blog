@@ -150,7 +150,7 @@ Function.prototype.bind2 = function (context) {
   return fbound
 }
 
-// function myBind(context) {
+// function myBind() {
 //   let fn = this
 //   let [context, ...args] = arguments
 //   let newFn = function () {
