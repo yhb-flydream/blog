@@ -5,6 +5,8 @@
 > [《深入剖析：Vue 核心之虚拟 DOM》(作者：我是你的超级英雄)【来源：掘金】](https://juejin.cn/post/6844903895467032589)
 >
 > [《从了解到深入虚拟DOM和实现diff算法》(作者：小浪努力学前端)【来源：掘金】](https://juejin.cn/post/6990582632270528525)
+>
+> [《Vue原理解析之Virtual Dom》(作者：JoeRay61)【来源：掘金】](https://segmentfault.com/a/1190000008291645)
 
 ## 虚拟 DOM 出现的原因
 
