@@ -2,7 +2,9 @@
 
 > **参考**
 >
-> [《使用 CSS 弹性盒子》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/conflicting/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+> [《flex 布局的基本概念》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+>
+> [《CSS 弹性盒子布局》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout)
 >
 > [《flex》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
 >
@@ -28,20 +30,19 @@
 
 [TOC]
 
+## 基本概念
+
 - `display: flex;` 任何容器
 - `display: inline-flex;` 行内元素
 - `display: -webkit-flex;` webkit 内核
 - 设置 flex 布局后，子元素的 `float、clear、vertical-align` 属性将失效
-
-## 基本概念
-
 - 采用 flex 布局的元素称为 **Flex 容器**。
 - 容器的所有子元素称为容器的成员 **Flex 项目**。
 - 容器默认存在两根轴：
   - 水平的主轴（由 `flex-direction` 决定）
   - 垂直的交叉轴
 
-## `Flex` 容器属性
+## `Flex` 容器属性（设置 `display: flex;` 的元素）
 
 ### `flex-direction` 决定主轴方向（项目排列方向）
 
@@ -82,7 +83,7 @@
 
 - `<flex-direction> || <flex-wrap>`
 
-### `align-content`（定义了**`多根轴线的对齐方式`**，_如果项目只有一条轴线，该属性不起作用_）
+### `align-content`（定义了`多根轴线的对齐方式`，_如果项目只有一条轴线，该属性不起作用_）
 
 - `flex-start | flex-end | center | space-between | space-around | stretch`
   - `stretch`（默认值）轴线占满整个交叉轴
@@ -92,7 +93,7 @@
   - `space-between` 与交叉轴两端对齐，轴线之间的间隔平均分布
   - `space-around` 每根轴线两侧间距相等，轴线之间的间隔比轴线与边框之间的间隔大一倍
 
-## 项目属性（设置`display: flex;`属性元素的子元素的属性）
+## 项目属性（设置 `display: flex;` 的元素的子元素）
 
 ### `order`定义项目排列顺序，数值越小，排列越靠前，默认值 0（可以为负数）
 

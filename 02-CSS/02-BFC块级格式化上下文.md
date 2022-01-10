@@ -21,7 +21,7 @@
 - 表格单元格（元素的 display 为 table-cell，HTML 表格单元格默认为该值）
 - 表格标题（元素的 display 为 table-caption，HTML 表格标题默认为该值）
 - 匿名表格单元格元素（元素的 display 为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是 HTML table、row、tbody、thead、tfoot 的默认属性）或 inline-table）
-- overflow 计算值(Computed)不为 visible 的块元素
+- overflow 计算值不为 visible 的块元素
 - display 值为 flow-root 的元素
 - contain 值为 layout、content 或 paint 的元素
 - 弹性元素（display 为 flex 或 inline-flex 元素的直接子元素）
@@ -47,7 +47,7 @@
 
 **有三种情况会形成外边距重叠：**
 
-- 1、同一层相邻元素之间
+- 同一层相邻元素之间
 
 ```html
 <style>
@@ -65,7 +65,7 @@
 
 上例中两个`<p>`元素会发生边界折叠，只会挑选最大边界范围留下，所以这个例子的边界范围其实是 87px。
 
-- 2、没有内容将父元素和后代元素分开
+- 没有内容将父元素和后代元素分开
 
 如果没有边框 `border`，`内边距 padding`，`行内内容`，也没有创建`块级格式上下文`或`清除浮动`来分开**一个块级元素的上边界 margin-top 与其内一个或多个后代块级元素的上边界 margin-top**；
 
@@ -94,11 +94,11 @@
 </section>
 ```
 
-- 3、空的块级元素
+- 空的块级元素
 
 当**一个块元素上边界 margin-top 直接贴到元素下边界 margin-bottom** 时也会发生边界折叠。
 
-这种情况会发生在**一个块元素完全没有设定`边框 border`、`内边距 paddng`、`高度 height`、`最小高度 min-height`、`最大高度 max-height`、`内容设定为 inline` 或是加上 `clear-fix`** 的时候。
+这种情况会发生在**一个块元素完全没有设定`边框 border`、`内边距 paddng`、`高度 height`、`最小高度 min-height`、`最大高度 max-height`、`内容设定为 inline` 或是加上 `clearfix`** 的时候。
 
 ```html
 <style>

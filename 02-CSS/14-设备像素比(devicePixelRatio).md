@@ -5,6 +5,8 @@
 > [《设备像素比（devicePixelRatio）》(作者：xueli_2017)【来源：CSDN】](https://blog.csdn.net/xueli_2017/article/details/91492971)
 >
 > [《像素、设备像素比、PPI、Viewport》(作者：小马的日常琐碎)【来源：博客园】](https://www.cnblogs.com/maqingbo/p/7528861.html)
+>
+> [《图文并茂带你弄懂物理分辨率、分辨率、物理像素、逻辑像素、dpr、ppi》(作者：砖业洋\_\_)【来源：CSDN】](https://blog.csdn.net/qq_34115899/article/details/105566707)
 
 [TOC]
 

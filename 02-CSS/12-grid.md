@@ -22,7 +22,7 @@
 >
 > [《Grid 布局指南》（作者：\_leonlee）【来源：简书】](https://www.jianshu.com/p/d183265a8dad)
 >
-> [《写给自己看的 display: grid 布局教程》（作者：张鑫旭）【来源：新空间，鑫生活】](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
+> [《写给自己看的 display: grid 布局教程》（作者：张鑫旭）【来源：http://www.zhangxinxu.com】](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
 
 [TOC]
 
