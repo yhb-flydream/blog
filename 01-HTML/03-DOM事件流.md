@@ -1,4 +1,4 @@
-# 捕捉&冒泡&委托事件
+# DOM 事件流
 
 > **参考**
 >
@@ -8,7 +8,7 @@
 
 [TOC]
 
-## DOM 事件流
+## DOM 事件流阶段
 
 ### 捕获阶段
 
@@ -30,7 +30,7 @@
 
 通过 DOM0 级方法指定事件处理程序方法很简单，首先取得一个要操作元素的引用，然后接将一个函数赋值给该元素的对应事件处理程序属性。
 
-每个元素包括 window 和 document 都拥有自己的事件处理程序属性。注意，这种方法添加的事件处理程序将在事件流的冒泡阶段被处理。
+每个元素包括 window 和 document 都拥有自己的事件处理程序属性。**注意，这种方法添加的事件处理程序将在事件流的冒泡阶段被处理。**
 
 - 事件处理程序属性全部小写，以”on”开头，后面跟事件类型：
   - onclick
@@ -41,7 +41,7 @@
 - 每个元素如 img、a、input、form 包括 window 和 document 都拥有自己的事件处理程序属性。
   - `document.getElementById("btn1").onclick`
   - `document.getElementById("img1").onclick`
-  - `document.getElementById("img1").onmerror`
+  - `document.getElementById("img1").onerror`
 
 **注意：如果以上代码处于文档的底部，在页面刚刚加载时，我们将鼠标移动到 img1 上面。有可能由于代码尚未执行，不会弹出我们设定的对话框！如今，这个延迟已经十分短暂。**
 
@@ -51,16 +51,16 @@
 
 参数：
 
-- 要处理事件名(不含 on)
-- 事件处理函数
-- 布尔变量
-  - false（默认）在冒泡阶段处理事件函数
-  - true 在捕获阶段处理事件函数
+1. 要处理事件名(不含 on)
+2. 事件处理函数
+3. 布尔变量
+   - false（默认）在冒泡阶段处理事件函数
+   - true 在捕获阶段处理事件函数
 
 与 DOM0 级事件区别：
 
-- DOM2 不依赖事件处理程序属性
-- 可以同时对对象的同一事件注册多个处理程序，它们按照注册顺序依次执行。
+1. DOM2 不依赖事件处理程序属性
+2. 可以同时对对象的同一事件注册多个处理程序，它们按照注册顺序依次执行。
 
 我们可以用 `removeEventListener` 方法来删除我们刚才指定的事件处理程序，注意参数要保持一致：
 
@@ -96,16 +96,16 @@ btn1.removeEventListener(
 
 这两个方法只接收 2 个参数：
 
-- 事件名称
-- 事件处理函数
+1. 事件名称
+2. 事件处理函数
 
 由于 IE8 及更早版本只支持事件冒泡，这两个方法添加的事件处理程序会在事件冒泡阶段被执行。
 
 和 DOM2 不同的是：
 
-- IE 事件处理方法运行作用域为全局作用域，this 指代 window；
-- 第一个参数事件名以 on 为前缀；
-- 当为同一对象的相同事件指定多个处理程序时，**执行顺序和 DOM2 相反，IE 中以添加它们的相反顺序执行**。
+1. IE 事件处理方法运行作用域为全局作用域，this 指代 window；
+2. 第一个参数事件名以 on 为前缀；
+3. 当为同一对象的相同事件指定多个处理程序时，**执行顺序和 DOM2 相反，IE 中以添加它们的相反顺序执行**。
 
 ### 跨浏览器支持
 
@@ -122,10 +122,10 @@ var EventUtil = {
   },
 
   removeEventHandler: function (element, eventType, handler) {
-    if (element.aremoveEventListener) {
-      element.addEventListener(eventType, handler, flase)
+    if (element.removeEventListener) {
+      element.removeEventListener(eventType, handler, flase)
     } else if (element.detachEvent) {
-      element.attachEvent('on' + eventType, handler)
+      element.detachEvent('on' + eventType, handler)
     } else {
       element['on' + eventType] = null
     }
@@ -135,11 +135,11 @@ var EventUtil = {
 
 ## 事件对象
 
-在触发某个事件时，会产生一个 event 对象。该对象中包含与事件有关的信息。例如触发事件的元素、事件的类型、与特定事件相关的如鼠标位置信息等。
+在触发某个事件时，会产生一个 `event` 对象。该对象中包含与事件有关的信息。例如触发事件的元素、事件的类型、与特定事件相关的如鼠标位置信息等。
 
 ### DOM 事件对象
 
-event 对象中包含有大量的有关事件的属性和方法（例如 event.stopPropagation()方法可用于停止事件在捕获或者冒泡阶段的继续传播，preventDefault()方法会取消阻止事件的行）
+`event` 对象中包含有大量的有关事件的属性和方法（例如 `event.stopPropagation` 方法可用于停止事件在捕获或者冒泡阶段的继续传播，`event.preventDefault` 方法会取消阻止事件的行）
 
 | 属性/方法       | 值类型   | 读写     | 描述                                                                 |
 | --------------- | -------- | -------- | -------------------------------------------------------------------- |
@@ -153,7 +153,7 @@ event 对象中包含有大量的有关事件的属性和方法（例如 event.s
 
 #### IE 事件对象
 
-在 IE 中，当使用 DOM0 级指定事件处理程序时，event 对象被认为是 window 的一个属性，例如获取鼠标点击坐标的代码：
+在 IE 中，当使用 DOM0 级指定事件处理程序时，`event` 对象被认为是 window 的一个属性，例如获取鼠标点击坐标的代码：
 
 ```js
 var mouseLoc = function () {
@@ -162,7 +162,7 @@ var mouseLoc = function () {
 }
 ```
 
-当使用 attachEvent()方法指定事件处理程序时，event 对象会被作为参数传入事件处理程序，我们将以上的代码重写：
+当使用 `attachEvent` 方法指定事件处理程序时，`event` 对象会被作为参数传入事件处理程序，我们将以上的代码重写：
 
 ```js
 var mouseLoc = function (event) {
@@ -194,10 +194,10 @@ var EventUtil = {
   },
 
   removeEventHandler: function (element, eventType, handler) {
-    if (element.aremoveEventListener) {
-      element.addEventListener(eventType, handler, flase)
+    if (element.removeEventListener) {
+      element.removeEventListener(eventType, handler, flase)
     } else if (element.detachEvent) {
-      element.attachEvent('on' + eventType, handler)
+      element.detachEvent('on' + eventType, handler)
     } else {
       element['on' + eventType] = null
     }
@@ -228,7 +228,7 @@ var EventUtil = {
   },
 
   getRelatedTarget: function (event) {
-    if (event.relatedTarger) {
+    if (event.relatedTarget) {
       return event.relatedTarget
     } else if (event.toElement) {
       return event.toElement
