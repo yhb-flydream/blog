@@ -36,10 +36,10 @@ console.log(auto instanceof Object)
 ```js
 function myInstanceof(left, right) {
   let leftProto = Object.getPrototypeOf(left),
-    prototype = right.prototype
+    prototypeObj = right.prototype
   while (true) {
     if (!leftProto) return false
-    if (leftProto === prototype) return true
+    if (leftProto === prototypeObj) return true
     leftProto = Object.getPrototypeOf(leftProto)
   }
 }
