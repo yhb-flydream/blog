@@ -71,7 +71,7 @@
   - `space-around` 每个项目两侧间距相等，即两个项目之间间距是一侧的二倍
   - `space-evenly` 任何两个 flex 项之间的间距（以及到 flex 容器边缘的空间）相等
 
-### `align-item`（项目在交叉轴方向上如何对齐）
+### `align-items`（项目在交叉轴方向上如何对齐）
 
 - `flex-start | flex-end | center | baseline | stretch`
 
