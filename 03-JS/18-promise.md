@@ -35,6 +35,8 @@
 > [《Promise 的队列与 setTimeout 的队列有何关联？》【来源：知乎】](https://www.zhihu.com/question/36972010)
 >
 > [《手写一个 Promise/A+,完美通过官方 872 个测试用例》(作者：\_蒋鹏飞)【来源：CSDN】](https://blog.csdn.net/dennis_jiang/article/details/105389519)
+>
+> [《按照 Promise/A+ 规范逐行注释并实现 Promise》(作者：Asheng)【来源：思否】](https://segmentfault.com/a/1190000041640722)
 
 [TOC]
 
@@ -132,7 +134,7 @@ class myPromise {
 
 const resolvePromise = (promise2, x, resolve, reject) => {
   if (promise2 === x) {
-    return reject(new TypeError("Chaining cycle detected for promise #<Promise>"));)
+    return reject(new TypeError("Chaining cycle detected for promise #<Promise>"));
   }
   let called
   if ((typeof x === 'object' && x != null) || typeof x === 'function') {
@@ -165,11 +167,16 @@ myPromise.resolve = value => {
   if (value instanceof myPromise) {
     return value
   }
+  if (value !== null && typeof value === 'object' && typeof value.then === 'function') {
+    return new myPromise((resolve, reject) => {
+      value.then.call(value, v => resolve(v), e => reject(e))
+    })
+  }
   return new myPromise(resolve => resolve(value))
 }
 
 myPromise.reject = reason => {
-  return new myPromise(resolve => reject(reason))
+  return new myPromise((resolve, reject) => reject(reason))
 }
 
 myPromise.all = function(promiseArr) {
@@ -199,6 +206,10 @@ myPromise.race = function(promiseArr) {
       })
     })
   })
+}
+
+myPromise.catch = onRejected => {
+  return this.then(null, onRejected)
 }
 ```
 
@@ -239,7 +250,7 @@ function Promise(executor) {
   }
 
   try {
-    excutor(resolve, reject)
+    executor(resolve, reject)
   } catch (reason) {
     reject(reason)
   }
