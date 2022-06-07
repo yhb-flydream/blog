@@ -133,6 +133,6 @@ beforeRouteEnter (to, from, next) {
 - HTML5 提供了 History API 来实现 URL 的变化，其中主要的 API 有以下两个：
   - `history.pushState()` 可以增加一个历史记录
   - `history.replaceState()` 替换当前的记录
-- 可以使用 popstate 事件来监听 URL 的变化，对页面进行跳转
+- 可以使用 `popstate` 事件来监听 URL 的变化，对页面进行跳转
 - history.pushState() 和 history.replaceState() 不会触发 `popstate` 事件，需要手动触发页面跳转
 - history 模式需要后端正确配置路由指向映射，确保页面都可以访问到
