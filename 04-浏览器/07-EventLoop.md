@@ -14,7 +14,7 @@
 >
 > [《什么是 Event Loop？》(作者：阮一峰)【来源：阮一峰的网络日志】](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
 >
-> [《从一道面试题来理解 JS 事件循环》(作者：谢小飞)【来源： 谢小飞的博客】](https://xieyufei.com/2019/12/30/Quiz-Eventloop.html)
+> [《从一道面试题来理解 JS 事件循环》(作者：谢小飞)【来源：谢小飞的博客】](https://xieyufei.com/2019/12/30/Quiz-Eventloop.html)
 >
 > [《浅析 JS 中的 EventLoop 事件循环（新手向）》(作者：savokiss)【来源：思否】](https://segmentfault.com/a/1190000019313028)
 >
@@ -29,6 +29,8 @@
 > [《总是一知半解的 Event Loop》(作者：孙宇辉)【来源：前端早读课】](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226694&idx=1&sn=01908e1c5089010733e723c99947b311&chksm=bd495bc28a3ed2d4d92c024910eb2b0367d0b22ee8e2587fee9253a359ebf99dba63338f3ccb&scene=21#wechat_redirect)
 >
 > [《浏览器与 Node 的事件循环(Event Loop)有何区别?》(作者：Fundebug)【来源：知乎】](https://zhuanlan.zhihu.com/p/54882306)
+>
+> [《深入：微任务与 Javascript 运行时环境》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
 
 [TOC]
 
