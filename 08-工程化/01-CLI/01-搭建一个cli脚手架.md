@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-09-28 16:56:54
- * @LastEditTime: 2022-06-07 13:53:49
+ * @LastEditTime: 2022-06-08 11:21:13
  * @LastEditors: yaohebin
  * @Description: 搭建一个 cli 脚手架
 -->
@@ -12,6 +12,8 @@
 > [《从 0 构建自己的脚手架/CLI 知识体系（万字） 🛠》(作者：ITEM)【来源：掘金】](https://juejin.cn/post/6966119324478079007)
 >
 > [《手把手教你写一个脚手架》(作者：谭光志)【来源：掘金】](https://juejin.cn/post/6932610749906812935)
+>
+> [《手把手教你写一个脚手架（二）》(作者：谭光志)【来源：掘金】](https://juejin.cn/post/6965684757921431583)
 >
 > [《chalk不支持nodejs中require引入，以及颜色不变的解决方法》(作者：打倒OKR)【来源：掘金】](https://juejin.cn/post/7094161450947575844)
 
