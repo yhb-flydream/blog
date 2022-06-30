@@ -1,3 +1,10 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 16:58:49
+ * @LastEditTime: 2022-06-30 16:29:36
+ * @LastEditors: yaohebin
+ * @Description: new运算符的执行过程
+-->
 # new 运算符的执行过程
 
 > **参考**
