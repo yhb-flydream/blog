@@ -33,6 +33,22 @@ function.call(thisArg, arg1, arg2, ...)
 
 ### 实现 call
 
+原生调用方式：
+
+```js
+Object.prototype.toString.call(obj, arg1, arg2, ...)
+```
+
+目的是将 toString 方法里面的 this 指向，换成 obj
+
+1. 获取 obj 或者 window
+2. 获取参数
+3. 获取 toString 方法，赋值给一个 临时方法
+   - 可以通过 this 访问到，因为 toString.call 的 call 被 toString 调用，则 this 指向调用者，即 toString
+4. 执行 临时方法，并传入参数
+5. 删除 临时方法
+6. 返回执行结果
+
 ```js
 Function.prototype.call2 = function (context) {
   context = context || window
@@ -81,6 +97,22 @@ function.apply(thisArg, [argsArray])
 
 使用调用者提供的 this 值和参数调用该函数的返回值。若该方法没有返回值，则返回 undefined。
 
+原生调用方式：
+
+```js
+Object.prototype.toString.apply(obj, args)
+```
+
+目的是将 toString 方法里面的 this 指向，换成 obj
+
+1. 获取 obj 或者 window
+2. 获取参数
+3. 获取 toString 方法，赋值给一个 临时方法
+   - 可以通过 this 访问到，因为 toString.call 的 call 被 toString 调用，则 this 指向调用者，即 toString
+4. 执行 临时方法，并传入参数
+5. 删除 临时方法
+6. 返回执行结果
+
 ```js
 Function.prototype.apply2 = function (context, arr) {
   context = Object(context) || window
@@ -104,7 +136,7 @@ Function.prototype.apply2 = function (context, arr) {
 //   context = context || window
 //   let sym = Symbol()
 //   context[sym] = this
-//   let result constext[sym](args)
+//   let result context[sym](args)
 //   delete context[sym]
 //   return result
 // }
@@ -129,6 +161,28 @@ function.bind(thisArg[, arg1[, arg2[, ...]]])
   - 当目标函数被调用时，被预置入绑定函数的参数列表中的参数。
 
 返回一个原函数的拷贝，并拥有指定的 this 值和初始参数。
+
+原生调用方式：
+
+```js
+const toStringFn = Object.prototype.toString.bing(obj, args)
+```
+
+目的是将 toString 方法里面的 this 指向，换成 obj，并返回一个可执行函数
+
+1. 获取 obj 或者 window
+2. 获取参数
+3. 获取 toString 方法的 this
+4. 声明一个新函数
+5. 收集新函数的参数
+6. 新函数使用 apply 函数修正自己的 this 指向
+   - bind 返回的函数即可以直接调用，又可以当做构造函数使用
+   - 当直接调用的时候，新函数的 this 需指向 obj 或者 window
+   - 当被用作构造函数使用的时候，，新函数的 this 需指向自身的 this
+7. 修改 新函数的 prototype 指向 obj 或者 window 的 prototype，用以判断执行是以什么方式执行返回的新函数
+8. 在新函数中使用 apply 函数执行，传入修正后的 this，并传入参数
+9. 返回新函数的执行结果
+10. 返回新函数
 
 ```js
 Function.prototype.bind2 = function (context) {
