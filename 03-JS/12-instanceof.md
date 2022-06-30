@@ -1,3 +1,10 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:00:29
+ * @LastEditTime: 2022-06-30 16:55:04
+ * @LastEditors: yaohebin
+ * @Description: instanceof
+-->
 # instanceof
 
 > **参考**
