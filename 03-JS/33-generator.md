@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2022-06-15 08:55:45
- * @LastEditTime: 2022-07-09 14:48:41
+ * @LastEditTime: 2022-07-09 18:19:56
  * @LastEditors: yaohebin
  * @Description: generator
 -->
@@ -13,6 +13,8 @@
 > [《function\*》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*)
 >
 > [《Generator》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+
+[TOC]
 
 `function*` 这种声明方式 (function 关键字后跟一个星号）会定义一个生成器函数 (generator function)，它返回一个 `Generator` 对象。
 

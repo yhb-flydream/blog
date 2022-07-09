@@ -1,3 +1,10 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 16:59:23
+ * @LastEditTime: 2022-07-09 18:18:10
+ * @LastEditors: yaohebin
+ * @Description: this
+-->
 # this
 
 > **参考**
@@ -5,6 +12,8 @@
 > [《this》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
 >
 > [《JavaScript 深入之从 ECMAScript 规范解读 this》(作者：冴羽)【来源：掘金】](https://juejin.cn/post/6844903473872371725)
+
+[TOC]
 
 **在绝大多数情况下，函数的调用方式决定了 this 的值（运行时绑定）。**
 
