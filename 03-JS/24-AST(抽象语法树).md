@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-19 11:43:03
+ * @LastEditTime: 2022-07-08 16:41:30
+ * @LastEditors: yaohebin
+ * @Description: AST(抽象语法树)
+-->
+
 # AST(抽象语法树)
 
 > **参考**
@@ -13,6 +21,8 @@
 > [AST Explorer【来源：AST Explorer】](https://astexplorer.net/)
 >
 > [《抽象语法树 AST 介绍》【来源：GOYTH】](http://www.goyth.com/2018/12/23/AST/)
+>
+> [《聊一聊 Javascript 中的 AST》(作者：Cryptic)【来源：简书】](https://www.jianshu.com/p/32db2f258986)
 
 [TOC]
 
@@ -23,13 +33,13 @@
 AST 不依赖于具体的文法，不依赖于语言的细节，我们将源代码转化为 AST 后，可以对 AST 做很多的操作，包括一些你想不到的操作，这些操作实现了各种各样形形色色的功能，给你带进一个不一样的世界。
 
 - 使用场景
-  - JS 反编译，语法解析
-  - Babel 编译 ES6 语法
-  - 代码高亮
-  - 关键字匹配
-  - 作用域判断
-  - 代码压缩
-  - css 预处理器
+  - IDE 的错误提示、代码格式化、代码高亮、代码补全、关键字匹配
+  - 打包工具对代码的处理
+    - Babel 编译 ES6 语法
+    - css 预处理器
+    - 代码压缩
+    - eslint
+    - pretiier
 
 **抽象语法树其实就是将一类标签转化成通用标识符，从而结构出的一个类似于树形结构的语法树。**
 
