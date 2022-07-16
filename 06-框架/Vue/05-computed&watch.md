@@ -1,3 +1,10 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-02 07:54:46
+ * @LastEditTime: 2022-07-15 15:07:10
+ * @LastEditors: yaohebin
+ * @Description: 
+-->
 # computed&watch
 
 > **参考**
@@ -8,7 +15,7 @@ watch 和 computed 都是以 Vue 的依赖追踪机制为基础的。
 
 ## computed
 
-- 赖其他属性，由其他属性计算而来
+- 依赖其他属性，由其他属性计算而来
 - computed 带有缓存功能，只有依赖型数据发生改变，computed 才会重新计算
 - 都有一个 get 和一个 set 方法，当数据变化时，调用 set 方法进行其他操作
 
