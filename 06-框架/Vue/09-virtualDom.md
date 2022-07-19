@@ -1,3 +1,10 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-10-20 11:14:32
+ * @LastEditTime: 2022-07-16 17:33:56
+ * @LastEditors: yaohebin
+ * @Description: virtualDom
+-->
 # virtualDom
 
 > **参考**
@@ -8,9 +15,12 @@
 >
 > [《Vue原理解析之Virtual Dom》(作者：JoeRay61)【来源：掘金】](https://segmentfault.com/a/1190000008291645)
 
+[TOC]
+
 ## 虚拟 DOM 出现的原因
 
-操作大量的真实 DOM 的代价很大，每次操作 DOM 都可能引起浏览器的回流，浪费性能，影响体验
+1. 操作大量的真实 DOM 的代价很大，每次操作 DOM 都可能引起浏览器的回流，浪费性能，影响体验
+2. 跨平台
 
 ## 虚拟 DOM 的好处
 
