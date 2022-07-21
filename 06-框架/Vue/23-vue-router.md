@@ -11,6 +11,12 @@
 > [《popstate》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event)
 >
 > [《深度剖析：前端路由原理》(作者：我是你的超级英雄)【来源：掘金】](https://juejin.cn/post/6844903906024095751)
+>
+> [《[实践系列]-前端路由》(作者：null 仔)【来源：思否】](https://segmentfault.com/a/1190000017853553)
+>
+> [《理解 Web 路由》(作者：知乎用户 11CZ54)【来源：知乎】](https://zhuanlan.zhihu.com/p/24814675)
+>
+> [《前端路由的两种实现原理》(作者：orange)【来源：思否】](https://segmentfault.com/a/1190000007238999)
 
 [TOC]
 
@@ -69,7 +75,7 @@ const router = new VueRouter({
       },
     },
   ],
-})
+});
 ```
 
 ### 组件内守卫
