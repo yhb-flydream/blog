@@ -50,7 +50,7 @@ module.exports = {
       { test: /\.ts$/, use: 'ts-loader' },
     ],
   },
-}
+};
 ```
 
 ### 使用 loader 的方式
@@ -78,7 +78,7 @@ module: {
         },
       ],
     },
-  ]
+  ];
 }
 ```
 
@@ -87,7 +87,7 @@ module: {
 可以在 import 语句或任何等效于 "import" 的方式中指定 loader。使用 `!` 将资源中的 loader 分开。分开的每个部分都相对于当前目录解析。
 
 ```js
-import Styles from 'style-loader!css-loader?modules!./styles.css'
+import Styles from 'style-loader!css-loader?modules!./styles.css';
 ```
 
 通过前置所有规则及使用 `!`，可以对应覆盖到配置中的任意 loader。
@@ -106,14 +106,13 @@ webpack --module-bind jade-loader --module-bind 'css=style-loader!css-loader'
 
 - loader 支持链式传递。
   - 能够对资源使用流水线(pipeline)。
-  - **一组链式的 loader 将按照相反的顺序执行。**
+  - **一组链式的 loader 将按照相反的顺序（按照 loader 的顺序，从后往前）执行。**
   - loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
 - loader 可以是同步的，也可以是异步的。
 - loader 运行在 Node.js 中，并且能够执行任何可能的操作。
 - loader 接收查询参数。用于对 loader 传递配置。
 - loader 也能够使用 options 对象进行配置。
 - 除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。
-- 插件(plugin)可以为 loader 带来更多特性。
 - loader 能够产生额外的任意文件。
 
 ## 常用 loader
@@ -148,7 +147,7 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 ### postcss-loader
@@ -170,7 +169,7 @@ module.exports = {
       overrideBrowserslist: ['> 1%', 'last 3 versions', 'ie 8'],
     }),
   ],
-}
+};
 ```
 
 在 `webpack.config.js` 配置：
@@ -186,7 +185,7 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 ### babel-loader
@@ -220,7 +219,7 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 在 `babel.config.js` 配置：
@@ -239,7 +238,7 @@ module.exports = {
       plugins: ['dynamic-import-node'],
     },
   },
-}
+};
 ```
 
 ### html-loader
@@ -264,15 +263,15 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 使用：
 
 ```js
-import Content from '../template.html'
+import Content from '../template.html';
 
-document.body.innerHTML = Content
+document.body.innerHTML = Content;
 ```
 
 ### file-loader
@@ -305,14 +304,14 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 使用：
 
 ```js
-import img from './pic.png'
-console.log(img) // https://www.baidu.com/pic_600eca23.png
+import img from './pic.png';
+console.log(img); // https://www.baidu.com/pic_600eca23.png
 ```
 
 ### url-loader
@@ -346,13 +345,13 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 使用：
 
 ```js
-import img from './pic.png'
+import img from './pic.png';
 ```
 
 ### html-withimg-loader
@@ -393,7 +392,7 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 使用：
@@ -438,7 +437,7 @@ npm i vue-loader vue vue-template-compiler -D
 - 修改 options 参数 esModule 为 false
 
 ```js
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -454,7 +453,7 @@ module.exports = {
     ],
   },
   plugins: [new VueLoaderPlugin()],
-}
+};
 ```
 
 使用：
@@ -462,12 +461,12 @@ module.exports = {
 - 在 `main.js`
 
 ```js
-import App from './index.vue'
-import Vue from 'Vue'
+import App from './index.vue';
+import Vue from 'Vue';
 new Vue({
   el: '#app',
   render: (h) => h(App),
-})
+});
 ```
 
 - 在 `index.vue`
@@ -521,7 +520,7 @@ module.exports = {
     indent: [2, 4], // 缩进风格
     'no-unused-vars': 'error', // 变量声明必须使用
   },
-}
+};
 ```
 
 在 `webpack.config.js` 配置：
@@ -543,9 +542,11 @@ module.exports = {
       },
     ],
   },
-}
+};
 ```
 
 使用：
 
 在 .js 文件中书写时，会自动检测写法是否符合所设置的 eslint 规则并提示
+
+## 写一个 loader
