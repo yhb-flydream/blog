@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:45:29
+ * @LastEditTime: 2022-06-09 09:53:59
+ * @LastEditors: yaohebin
+ * @Description: webpack 构建流程
+-->
+
 # webpack 构建流程
 
 > **参考**
@@ -6,7 +14,15 @@
 >
 > [《1-5 使用 Plugin》(作者：吴浩麟)【来源：吴浩麟】](https://webpack.wuhaolin.cn/1%E5%85%A5%E9%97%A8/1-5%E4%BD%BF%E7%94%A8Plugin.html)
 >
-> [《webpack构建流程分析》(作者：Rap_Jin)【来源：掘金】](https://juejin.cn/post/6844904000169607175)
+> [《webpack 构建流程分析》(作者：Rap_Jin)【来源：掘金】](https://juejin.cn/post/6844904000169607175)
+>
+> [《[万字总结] 一文吃透 Webpack 核心原理》(作者：范文杰)【来源：知乎】](https://zhuanlan.zhihu.com/p/363928061)
+>
+> [《[源码解读] Webpack 插件架构深度讲解》(作者：范文杰)【来源：知乎】](https://zhuanlan.zhihu.com/p/367931462)
+>
+> [《webpack 系列--浅析 webpack 的原理》(作者：saucxs)【来源：博客园】](https://www.cnblogs.com/chengxs/p/11022842.html)
+>
+> [《webpack 打包原理 ? 看完这篇你就懂了 !》(作者：null 仔)【来源：掘金】](https://juejin.cn/post/6844904038543130637)
 
 [TOC]
 
