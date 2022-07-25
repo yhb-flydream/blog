@@ -726,3 +726,5 @@ moment.locale('zh-cn')
 let r = moment().endOf('day').fromNow()
 console.log(r)
 ```
+
+## 写一个 plugin
