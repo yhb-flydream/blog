@@ -1,4 +1,12 @@
-# http1&http2&http3
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:38:24
+ * @LastEditTime: 2022-08-17 08:14:15
+ * @LastEditors: yaohebin
+ * @Description: HTTP1&HTTP2&HTTP3
+-->
+
+# HTTP1&HTTP2&HTTP3
 
 > **参考**
 >
@@ -11,6 +19,8 @@
 > [《Http 协议详解(深入理解)》(作者：有抱负的小狮子)【来源：CSDN】](https://blog.csdn.net/weixin_38087538/article/details/82838762)
 >
 > [《HTTP 2.0 协议详解》(作者：zqjflash)【来源：CSDN】](https://blog.csdn.net/zqjflash/article/details/50179235)
+>
+> [《http1.1 相对 http2 有哪些不足》(作者：挥刀北上)【来源：腾讯云开发者社区】](https://cloud.tencent.com/developer/inventory/4316/article/1561342)
 
 ## HTTP1.1
 

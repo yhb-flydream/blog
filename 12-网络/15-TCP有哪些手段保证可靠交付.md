@@ -1,8 +1,22 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-09-06 08:21:01
+ * @LastEditTime: 2022-08-20 08:38:47
+ * @LastEditors: yaohebin
+ * @Description: TCP 有哪些手段保证可靠交付
+-->
+
 # TCP 有哪些手段保证可靠交付
 
 > **参考**
 >
 > [《TCP 的可靠性传输是如何保证的》（作者：前端小时）【来源：知乎】](https://zhuanlan.zhihu.com/p/112317245)
+>
+> [《TCP 可靠传输：ARQ 协议（停止等待、超时重传、滑动窗口、回退 N 帧、选择重传）》（作者：啊 a 阿花）【来源：CSDN】](https://blog.csdn.net/aaahuahua/article/details/119965804)
+>
+> [《计算机网络——滑动窗口协议的窗口大小》（作者：Mr_J0304）【来源：CSDN】](https://blog.csdn.net/Mr_J0304/article/details/89599086)
+>
+> [《解析 TCP 之滑动窗口(动画演示)》（作者：SilentAssassin）【来源：CSDN】](https://blog.csdn.net/yao5hed/article/details/81046945)
 
 [TOC]
 

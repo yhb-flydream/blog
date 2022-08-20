@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:36:25
+ * @LastEditTime: 2022-08-20 17:33:07
+ * @LastEditors: yaohebin
+ * @Description: HTTP&HTTPS
+-->
+
 # HTTP&HTTPS
 
 > **参考**
@@ -7,6 +15,16 @@
 > [《HTTP 和 HTTPS 协议，看一篇就够了》(作者：会飞的狗~)【来源：CSDN】](https://blog.csdn.net/xiaoming100001/article/details/81109617)
 >
 > [《十分钟搞懂 HTTP 和 HTTPS 协议？》(作者：程序员吾非同)【来源：知乎】](https://zhuanlan.zhihu.com/p/72616216)
+>
+> [《HTTP 最强资料大全》(作者：阿宝哥)【来源：知乎】](https://juejin.cn/post/6844903472190455815)
+>
+> [《面试 -- 网络 HTTP》(作者：yck)【来源：知乎】](https://juejin.cn/post/6844903459662069773)
+>
+> [《我知道的 HTTP 请求》(作者：人人网 FED)【来源：掘金】](https://juejin.cn/post/6844903559306166279)
+>
+> [《白话 http 队头阻塞》(作者：挥刀北上)【来源：微信公众号 nodejs 全栈开发】](https://mp.weixin.qq.com/s/2-G86PmEdaswWlZ5p1YGJA)
+>
+> [《白话 http2 的多路复用》(作者：挥刀北上)【来源：腾讯云开发者社区】](https://cloud.tencent.com/developer/inventory/4316/article/1573513)
 
 [TOC]
 

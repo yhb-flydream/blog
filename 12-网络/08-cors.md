@@ -1,4 +1,11 @@
-# cors
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:39:29
+ * @LastEditTime: 2022-06-16 08:48:55
+ * @LastEditors: yaohebin
+ * @Description: CORS
+-->
+# CORS
 
 > **参考**
 >

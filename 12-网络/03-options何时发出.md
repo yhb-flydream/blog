@@ -1,4 +1,11 @@
-# options 何时发出
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:37:08
+ * @LastEditTime: 2022-06-16 08:47:18
+ * @LastEditors: yaohebin
+ * @Description: OPTIONS 何时发出
+-->
+# OPTIONS 何时发出
 
 > **参考**
 >
