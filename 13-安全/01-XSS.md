@@ -5,18 +5,18 @@
 > [《前端安全系列（一）：如何防止 XSS 攻击？》(作者：美团技术团队)【来源：CSDN】](https://blog.csdn.net/MeituanTech/article/details/82877451)
 >
 > [《XSS(跨站脚本攻击)详解》(作者：墨鱼菜鸡)【来源：博客园】](https://www.cnblogs.com/csnd/p/11807592.html)
+>
+> [《跨站脚本漏洞(XSS)基础讲解》(作者：Jewel591)【来源：简书】](https://www.jianshu.com/p/4fcb4b411a66)
 
 [TOC]
 
 ## 什么是 XSS 攻击
 
-Cross Site Scripting（跨站脚本攻击）简称 XSS，是一种**代码注入攻击**。
-
-> 攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-
-为了和 CSS 区分，这里把攻击的第一个字母改成了 X，于是叫做 XSS。
+Cross Site Scripting（跨站脚本攻击）简称 XSS，为了和 CSS 区分，这里把攻击的第一个字母改成了 X，于是叫做 XSS，是一种**代码注入攻击**。
 
 XSS 的本质是：**恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。**
+
+攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
 
 而由于直接在用户的终端执行，恶意代码能够直接获取用户的信息，或者利用这些信息冒充用户向网站发起攻击者定义的请求。
 
@@ -24,13 +24,13 @@ XSS 的本质是：**恶意代码未经过滤，与网站正常的代码混在�
 
 这里有一个问题：用户是通过哪种方法“注入”恶意脚本的呢？
 
-不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
+不仅仅是业务上的“用户创造内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
 
-- 来自用户的 UGC 信息
+- 来自用户创造的内容
 - 来自第三方的链接
 - URL 参数
 - POST 参数
-- Referer （可能来自不可信的来源）
+- Referrer （可能来自不可信的来源）
 - Cookie （可能来自其他子域注入）
 
 ## XSS 分类
@@ -143,14 +143,14 @@ DOM 中的内联事件监听器，如 `location`、`onclick`、`onerror`、`onlo
 
 <script>
   // setTimeout()/setInterval() 中调用恶意代码
-  setTimeout('UNTRUSTED')
-  setInterval('UNTRUSTED')
+  setTimeout('UNTRUSTED');
+  setInterval('UNTRUSTED');
 
   // location 调用恶意代码
-  location.href = 'UNTRUSTED'
+  location.href = 'UNTRUSTED';
 
   // eval() 中调用恶意代码
-  eval('UNTRUSTED')
+  eval('UNTRUSTED');
 </script>
 ```
 
