@@ -477,3 +477,7 @@ git config --global alias.s[缩略名] status[原名字]
 ```
 
 - [码云使用](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00150154460073692d151e784de4d718c67ce836f72c7c4000)
+
+#### Pull Requests 指南
+
+- [Pull Requests 指南](https://www.gin-vue-admin.com/docs/pulls)
