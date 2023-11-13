@@ -1,0 +1,111 @@
+/* 变量 */
+@main-color: #000000;
+@gray-color: #999999;
+
+@dir: top, right, bottom, left;
+
+/* each */
+each(range(5px, 50px, 5), .(@value1, @key1) {
+    @v1: unit(@value1);
+
+    each(@dir, .(@value2, @key2) {
+        .margin-@{value2}-@{v1} {
+          margin-@{value2}: @value1;
+        }
+
+        .padding-@{value2}-@{v1} {
+          padding-@{value2}: @value1;
+        }
+      }
+
+    );
+  }
+
+);
+
+@border-style: solid, dashed, dotted;
+
+/* each */
+each(range(20px), #(@value1) {
+    @v1: unit(@value1);
+
+    each(@border-style, #(@value2) {
+        .border-@{value2}-@{v1} {
+          border: @value1 @value2 @main-color;
+        }
+      }
+
+    )
+  }
+
+);
+
+/* mixin */
+// border style
+.border-style(@width: 1px, @style: solid, @color: @main-color) {
+  border: @width @style if((@color =@main-color), @gray-color, fadeout(@color, 20%));
+}
+
+div {
+  .border-style;
+}
+
+p {
+  .border-style(@color: @gray-color);
+}
+
+/* mixin */
+// base font style
+.base-style(@color: @main-color, @font-size: 16px, @font-weight: 400, @line-height: 1) {
+  color: if((@color =@main-color), @gray-color, fadeout(@color, 20%));
+  font-size: @font-size;
+  font-weight: @font-weight;
+  line-height: @line-height;
+}
+
+/* extend */
+h1,
+h2 {
+  .base-style;
+}
+
+h3 {
+  .base-style(@color: @gray-color);
+}
+
+/* mixin */
+// hover color
+.hover-color(@color: @main-color) {
+  color: if((@color =@main-color), @gray-color, fadeout(@color, 20%));
+  transition: color 0.3s;
+}
+
+a {
+  &:hover {
+    .hover-color;
+  }
+}
+
+/* mixin */
+// flex
+.display-flex(@direction: row, @justify: center, @align: center) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+@direction: left, center, right;
+
+/* each */
+each(@direction, .(@value) {
+    .display-flex-justify-@{value} {
+      .display-flex(@justify: @value)
+    }
+
+    .display-flex-align-@{value} {
+      .display-flex(@align: @value)
+    }
+  }
+
+);
