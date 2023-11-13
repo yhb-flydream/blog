@@ -2,6 +2,8 @@
 
 > **参考**
 >
+> [《will-change》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/CSS/will-change)
+>
 > [《Web 性能优化-CSS3 硬件加速(GPU 加速)》(作者：lizhen)【来源：https://lz5z.com/】](https://lz5z.com/Web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-CSS3%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/)
 >
 > [《CSS 动画之硬件加速》(作者：南北)【来源：w3cplus.com】](https://www.w3cplus.com/css3/introduction-to-hardware-acceleration-css-animations.html)
@@ -38,16 +40,43 @@
 - 元素有一个包含复合层的后代节点(换句话说，就是一个元素拥有一个子元素，该子元素在自己的层里)。
 - 元素有一个兄弟元素在复合图层渲染，并且该兄弟元素的 z-index 较小，那这个元素也会被应用到复合图层。
 
-其中 CSS 属性可以触发 GPU 加速的是：
+## CSS 开启硬件加速
 
-- transform
-  - 可用以下硬编码的方式触发硬件加速：
-  - `transform: translateZ(0);`
-  - `transform: rotateZ(360deg);`
-- opacity
-- filter
-- will-change
-  - `will-change: transform;`
+### transform
+
+```css
+.exam1 {
+  transform: translateZ(0);
+}
+.exam2 {
+  transform: translate3d(0, 0, 0);
+}
+.exam3 {
+  transform: rotateZ(360deg);
+}
+.exam4 {
+  transform: scaleZ(0.3);
+}
+```
+
+### opacity
+
+### filter
+
+### will-change
+
+will-change 为 web 开发者提供了一种告知浏览器该元素会有哪些变化的方法，这样浏览器可以在元素属性真正发生变化之前提前做好对应的优化准备工作。这种优化可以将一部分复杂的计算工作提前准备好，使页面的反应更为快速灵敏。
+
+- **不要将 will-change 应用到太多元素上：**
+  - 浏览器已经尽力尝试去优化一切可以优化的东西了。有一些更强力的优化，如果与 will-change 结合在一起的话，有可能会消耗很多机器资源，如果过度使用的话，可能导致页面响应缓慢或者消耗非常多的资源。
+- **不要过早应用 will-change 优化：**
+  - 通常，当元素恢复到初始状态时，浏览器会丢弃掉之前做的优化工作。但是如果直接在样式表中显式声明了 will-change 属性，则表示目标元素可能会经常变化，浏览器会将优化工作保存得比之前更久。
+  - **所以最佳实践是当元素变化之前和之后通过脚本来切换 will-change 的值。**
+- **有节制地使用：**
+  - 如果你的页面在性能方面没什么问题，则不要添加 will-change 属性来榨取一丁点的速度。
+  - will-change 的设计初衷是作为最后的优化手段，用来尝试解决现有的性能问题。它不应该被用来预防性能问题。过度使用 will-change 会导致大量的内存占用，并会导致更复杂的渲染过程，因为浏览器会试图准备可能存在的变化过程。这会导致更严重的性能问题。
+- **给它足够的工作时间：**
+  - 这个属性是用来让页面开发者告知浏览器哪些属性可能会变化的。然后浏览器可以选择在变化发生前提前去做一些优化工作。所以给浏览器一点时间去真正做这些优化工作是非常重要的。使用时需要尝试去找到一些方法提前一定时间获知元素可能发生的变化，然后为它加上 will-change 属性。
 
 不要这样直接写在默认状态中，因为 will-change 会一直挂着，可以在使用的时候挂在上去，触发完之后移除。
 
