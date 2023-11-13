@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-02-19 11:43:03
- * @LastEditTime: 2022-07-08 16:41:30
+ * @LastEditTime: 2023-11-13 12:17:24
  * @LastEditors: yaohebin
  * @Description: AST(抽象语法树)
 -->
@@ -23,6 +23,8 @@
 > [《抽象语法树 AST 介绍》【来源：GOYTH】](http://www.goyth.com/2018/12/23/AST/)
 >
 > [《聊一聊 Javascript 中的 AST》(作者：Cryptic)【来源：简书】](https://www.jianshu.com/p/32db2f258986)
+>
+> [《使用 Acorn 来解析 JavaScript》(作者：KentL)【来源：掘金】](https://juejin.cn/post/6844903450287800327)
 
 [TOC]
 
