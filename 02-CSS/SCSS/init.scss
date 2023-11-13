@@ -1,0 +1,135 @@
+/* 变量 */
+$main-color: #000000;
+$gray-color: #999999;
+
+/* use 规则 */
+/* math 模块 */
+@use 'sass:math';
+
+/* while */
+/* each */
+// margin, padding
+$number: 50px;
+$dir: top, right, bottom, left;
+@while $number >= 5px {
+  // $n: calc($number / 1px);
+  $n: math.div($number, 1px);
+
+  @each $item in $dir {
+    .margin-#{$item}-#{$n} {
+      margin-#{$item}: $number;
+    }
+    .padding-#{$item}-#{$n} {
+      padding-#{$item}: $number;
+    }
+  }
+  $number: $number - 5px;
+}
+
+/* for from through （包含 20） */
+/* each */
+// border
+$border-style: solid, dashed, dotted;
+@for $i from 1px through 20px {
+  $v: calc($i / 1px);
+
+  @each $style in $border-style {
+    .border-#{$style}-#{$v} {
+      border: $i $style $main-color;
+    }
+  }
+}
+
+/* for from to （不包含 20） */
+/* each */
+// border
+// $border-style: solid, dashed, dotted;
+// @for $i from 1px to 20px {
+//   $v: calc($i / 1px);
+
+//   @each $style in $border-style {
+//     .border-#{$style}-#{$v} {
+//       border: $i $style $main-color;
+//     }
+//   }
+// }
+
+/* function */
+/* if else */
+@function colorFn($color) {
+  @if ($color == $main-color) {
+    @return $gray-color;
+  } @else {
+    @return fade-out($color, 0.2);
+  }
+}
+
+/* mixin */
+// border style
+@mixin border-style($width: 1px, $style: solid, $color: $main-color) {
+  border: $width $style colorFn($color);
+}
+
+div {
+  @include border-style;
+}
+
+p {
+  @include border-style($color: $gray-color);
+}
+
+/* mixin */
+// base font style
+@mixin base-style($color: $main-color, $font-size: 16px, $font-weight: 400, $line-height: 1) {
+  color: colorFn($color);
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+/* include */
+h1 {
+  @include base-style;
+}
+
+/* extend */
+h2 {
+  @extend h1;
+}
+
+h3 {
+  @include base-style($color: $gray-color);
+}
+
+/* mixin */
+// hover color
+@mixin hover-color($color: $main-color) {
+  color: colorFn($color);
+  transition: color 0.3s;
+}
+
+a {
+  &:hover {
+    @include hover-color;
+  }
+}
+
+/* mixin */
+// flex
+@mixin display-flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* each */
+$direction: left, center, right;
+@each $i in $direction {
+  .display-flex-justify-#{$i} {
+    @include display-flex($justify: $i);
+  }
+  .display-flex-align-#{$i} {
+    @include display-flex($align: $i);
+  }
+}
