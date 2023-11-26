@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-02-02 07:53:39
- * @LastEditTime: 2022-07-15 15:25:17
+ * @LastEditTime: 2022-10-06 09:19:03
  * @LastEditors: yaohebin
  * @Description: Object.defineProperty&Proxy
 -->
@@ -29,6 +29,18 @@
 - 不支持监听数组的变化
   - 重写了数组的一些方法
   - `push、pop、shift、unshift、splice、sort、reverse`
+
+---
+
+- Vue 关于对象数据：
+  - 初始化传入 data 的数据可进行响应式
+  - 如果初始化没定义，后添加的数据需要使用 this.$set(obj, key, value) 去设置才会有响应式
+- Vue 关于数组数据：
+  - 初始化传入 data 的数据可进行响应式
+  - 直接替换原数组没问题
+  - 直接修改数组中对象的属性也没问题
+  - 使用数组方法操作也没问题，因为 vue 代理了数组原型上的方法
+  - 使用索引操作不能响应式，如果想要有响应式需要使用 this.$set(arr, index, value) 去设置才会有响应式
 
 ## Proxy
 
