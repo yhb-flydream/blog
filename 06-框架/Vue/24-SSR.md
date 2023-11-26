@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-06-24 11:43:01
- * @LastEditTime: 2022-07-21 11:10:36
+ * @LastEditTime: 2023-11-26 16:12:38
  * @LastEditors: yaohebin
  * @Description: SSR
 -->
@@ -15,6 +15,14 @@
 > [开箱即用的 SSR 框架](https://doc.ssr-fc.com/)
 >
 > [《带你五步学会 Vue SSR》(作者：leocoder)【来源：思否】](https://segmentfault.com/a/1190000016637877)
+>
+> [https://doc.ssr-fc.com](https://doc.ssr-fc.com/)
+>
+> [vite-plugin-ssr](https://cn.vite-plugin-ssr.com/)
+>
+> [Nuxt](https://nuxt.com.cn/)
+>
+> [Quasar](https://quasar.dev/)
 
 [TOC]
 
