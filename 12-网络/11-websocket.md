@@ -1,8 +1,17 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:40:36
+ * @LastEditTime: 2023-11-28 21:04:22
+ * @LastEditors: yaohebin
+ * @Description: WebSocket
+-->
 # WebSocket
 
 > **参考**
 >
 > [《WebSocket》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket)
+>
+> [《WebSockets》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/Web/API/Websockets_API)
 >
 > [《WebSocket 教程》(作者：阮一峰)【来源：阮一峰的网络日志】](http://www.ruanyifeng.com/blog/2017/05/websocket.html)
 >
