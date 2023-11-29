@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:19:57
+ * @LastEditTime: 2023-11-29 17:51:04
+ * @LastEditors: yaohebin
+ * @Description: CSP 内容安全策略
+-->
+
 # CSP 内容安全策略
 
 > **参考**
@@ -5,6 +13,8 @@
 > [《内容安全策略( CSP )》【来源：MDN】](https://developer.mozilla.org/zh-CN/docs/web/http/csp)
 >
 > [《内容安全策略（CSP）详解》(作者：我最犀利蛮鬼)【来源：CSDN】](https://blog.csdn.net/qq_37943295/article/details/79978761)
+>
+> [《Web 安全之内容安全策略（Content-Security-Policy,CSP）详解 》(作者：斑林鸽的代码世界)【来源：博客园】](https://www.cnblogs.com/mutudou/p/14373644.html)
 
 [TOC]
 

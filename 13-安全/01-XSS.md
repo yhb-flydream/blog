@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-02-01 17:18:35
+ * @LastEditTime: 2023-11-29 17:19:41
+ * @LastEditors: yaohebin
+ * @Description: XSS
+-->
+
 # XSS
 
 > **参考**
@@ -7,6 +15,14 @@
 > [《XSS(跨站脚本攻击)详解》(作者：墨鱼菜鸡)【来源：博客园】](https://www.cnblogs.com/csnd/p/11807592.html)
 >
 > [《跨站脚本漏洞(XSS)基础讲解》(作者：Jewel591)【来源：简书】](https://www.jianshu.com/p/4fcb4b411a66)
+>
+> [《Web 漏洞之 XSS(跨站脚本攻击)详解》(作者：黑客老鸟-九青)【来源：知乎】](https://zhuanlan.zhihu.com/p/397940947)
+>
+> [《跨站脚本攻击 XSS（最全最细致的靶场实战）》(作者：w01ke)【来源：CSDN】](https://blog.csdn.net/m0_51468027/article/details/122757024)
+>
+> [《Web 安全系列（四）：XSS 的防御》(作者：鬼鬼鬼)【来源：掘金】](https://juejin.cn/post/6844903684900388871)
+>
+> [《浅谈 Js 操作 Cookie，以及 HttpOnly 的限制》(作者：吃瓜喝水吃饼)【来源：知乎】](https://zhuanlan.zhihu.com/p/36197012)
 
 [TOC]
 
@@ -143,14 +159,14 @@ DOM 中的内联事件监听器，如 `location`、`onclick`、`onerror`、`onlo
 
 <script>
   // setTimeout()/setInterval() 中调用恶意代码
-  setTimeout('UNTRUSTED');
-  setInterval('UNTRUSTED');
+  setTimeout('UNTRUSTED')
+  setInterval('UNTRUSTED')
 
   // location 调用恶意代码
-  location.href = 'UNTRUSTED';
+  location.href = 'UNTRUSTED'
 
   // eval() 中调用恶意代码
-  eval('UNTRUSTED');
+  eval('UNTRUSTED')
 </script>
 ```
 
