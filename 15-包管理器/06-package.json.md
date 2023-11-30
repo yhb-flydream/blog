@@ -1,14 +1,23 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-06-11 09:56:48
+ * @LastEditTime: 2023-11-30 19:01:29
+ * @LastEditors: yaohebin
+ * @Description: package.json
+-->
 # package.json
 
+> **参考**
+>
+> [npm package.json](https://docs.npmjs.com/files/package.json)
+>
+> [npm package.json](https://yarn.nodejs.cn/en/docs/package-json)
+>
+> [《package.json 文件》（作者：阮一峰）【来源：JavaScript 标准参考教程（alpha）】](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
+>
+> [《重新认识 package.json》（作者：前端小黑）【来源：掘金】](https://juejin.cn/post/6844904159226003463)
+
 [TOC]
-
-参考
-[《JavaScript 标准参考教程（alpha）》，by 阮一峰 package.json 文件](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
-[重新认识 package.json](https://juejin.im/post/5ebcd8b1e51d454dc20dd8a0)
-
-[npm package.json](https://docs.npmjs.com/files/package.json)
-
-[yarn package.json](https://yarnpkg.com/zh-Hans/docs/package-json)
 
 ## 介绍
 

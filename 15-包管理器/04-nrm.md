@@ -1,6 +1,22 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-06-11 09:56:48
+ * @LastEditTime: 2023-11-30 18:39:00
+ * @LastEditors: yaohebin
+ * @Description: nrm
+-->
+
 # nrm
 
-- [用 nrm 一键切换 npm 源](https://www.cnblogs.com/wangmeijian/p/7072053.html)
+> **参考**
+>
+> [《nrm 使用详解》（作者：越前君）【来源：掘金】](https://juejin.cn/post/6931597891182002183)
+>
+> [《nrm 的使用（安装、配置、查看、切换、增加、删除、测试）》（作者：小阮 2018）【来源：CSDN】](https://blog.csdn.net/qq_38872934/article/details/105706101)
+>
+> [《用 nrm 一键切换 npm 源》（作者：wangmeijian）【来源：博客园】](https://www.cnblogs.com/wangmeijian/p/7072053.html)
+
+npm 的镜像管理工具。
 
 ## `npm config list` (查看 `npm` 源地址)
 

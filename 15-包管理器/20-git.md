@@ -1,12 +1,25 @@
-# 版本管理工具
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-06-11 09:56:48
+ * @LastEditTime: 2023-11-30 19:13:29
+ * @LastEditors: yaohebin
+ * @Description: git
+-->
+# git
+
+> **参考**
+>
+> [git](https://git-scm.com/)
+>
+> [《Git 远程操作详解》（作者：狂砍 2 分 4 篮板）【来源：掘金】](https://juejin.cn/post/7142666525365764104)
+>
+> [《Git 远程操作详解》（作者：阮一峰）【来源：阮一峰的网络日志】](https://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+>
+> [《Git 教程》（作者：廖雪峰）【来源：廖雪峰的官方网站】](https://www.liaoxuefeng.com/wiki/896043488029600)
+>
+> [《Git 大全》【来源：gitee】](https://gitee.com/all-about-git)
 
 [TOC]
-
-[git book](https://git-scm.com/book/zh/v2)
-[Pro Git](https://progit.bootcss.com/)
-[阮一峰 Git 远程操作详解](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
-[廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-[码云 Git 大全](https://gitee.com/all-about-git)
 
 - git 分布式管理
 - svn 集中式管理

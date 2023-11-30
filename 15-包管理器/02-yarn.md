@@ -1,11 +1,22 @@
+<!--
+ * @Author: yaohebin
+ * @Date: 2021-06-11 09:56:48
+ * @LastEditTime: 2023-11-30 17:50:40
+ * @LastEditors: yaohebin
+ * @Description: yarn
+-->
+
 # yarn
+
+> **参考**
+>
+> [yarn](https://yarnpkg.com/)
+>
+> [yarn 中文网](https://www.yarnpkg.cn/)
 
 [TOC]
 
 > 快速、可靠、安全的依赖管理。
-
-[yarn github](https://github.com/yarnpkg/yarn)
-[yarn 中文官网](https://yarnpkg.com/zh-Hans/)
 
 ## 特点
 
