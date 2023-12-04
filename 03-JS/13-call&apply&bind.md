@@ -64,15 +64,25 @@ Function.prototype.call2 = function (context) {
   delete context.fn
   return result
 }
-// function myCall(context) {
-//   let [context = window, ...args] = [...arguments]
-//   context = context || window
-//   let sym = Symbol()
-//   context[sym] = this
-//   let result = context[sym](...args)
-//   delete context[sym]
-//   return result
-// }
+
+function myCall() {
+  // 解构传入的参数
+  // context 第一个参数是：需要绑定的对象，如果传 null 则绑定 window
+  // args 收集剩余参数
+  let [context, ...args] = [...arguments]
+  context = context || window
+  // 声明一个 临时变量，变量用来复制 需要改变 this 指向的方法，然后把这个临时变量添加到 需要绑定的对象 上，随后再调用这个 临时变量 存放的方法时，需要改变 this 指向的方法的 this 的指向就变成了 需要绑定的对象
+  // 因为调用 call 的方式是 fn.call() 所以在 call 方法里可以通过 this 访问到 需要改变 this 指向的方法
+  let sym = Symbol()
+  context[sym] = this
+  // 执行这个 需要绑定的对象 上新添加的的方法，并把调用 call 时的参数传给这个新添加的的方法
+  // 得出的结果就是 需要改变 this 指向的方法 改变 this 指向之后调用的结果
+  let result = context[sym](...args)
+  // 把 需要绑定的对象 上临时的方法删除，不污染原对象
+  delete context[sym]
+  // 最后返回结果
+  return result
+}
 ```
 
 ## apply
