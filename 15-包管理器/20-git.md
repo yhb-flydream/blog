@@ -1,10 +1,11 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-06-11 09:56:48
- * @LastEditTime: 2023-11-30 19:13:29
+ * @LastEditTime: 2023-12-03 14:13:13
  * @LastEditors: yaohebin
  * @Description: git
 -->
+
 # git
 
 > **参考**
@@ -494,3 +495,24 @@ git config --global alias.s[缩略名] status[原名字]
 #### Pull Requests 指南
 
 - [Pull Requests 指南](https://www.gin-vue-admin.com/docs/pulls)
+
+#### git 本地仓库与 github 远程仓库关联
+
+> **参考**
+>
+> [《git 本地仓库关联到远程仓库》（作者：Mr.Hu.）【来源：CSDN】](https://blog.csdn.net/sinat_39049092/article/details/113417142)
+
+- git init
+  - 初始化 git 仓库
+- git remote add origin {remote git url}
+  - 设置远程 remote 地址
+- git pull origin main --rebase
+  - 拉取远程仓库 master 的文件
+- git branch --set-upstream-to=origin/main main
+  - 将本地分支设置为远程分支
+- git add .
+  - 将所有变更提交到本地仓库
+- git commit -m ''
+  - 提交注释
+- git push -u origin main（或者 git push --set-upstream origin main）
+  - 本地仓库推送到远程仓库
