@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-02-01 17:00:29
- * @LastEditTime: 2022-06-30 16:55:04
+ * @LastEditTime: 2023-12-05 13:43:00
  * @LastEditors: yaohebin
  * @Description: instanceof
 -->
@@ -42,12 +42,13 @@ console.log(auto instanceof Object)
 
 ```js
 function myInstanceof(left, right) {
-  let leftProto = Object.getPrototypeOf(left),
-    prototypeObj = right.prototype
-  while (true) {
-    if (!leftProto) return false
-    if (leftProto === prototypeObj) return true
+  let leftProto = Object.getPrototypeOf(left)
+  let rightProto = right.prototype
+
+  while(leftProto) {
+    if (leftProto === rightProto) return true
     leftProto = Object.getPrototypeOf(leftProto)
   }
+  return false
 }
 ```
