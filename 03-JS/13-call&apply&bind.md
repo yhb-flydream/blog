@@ -8,7 +8,7 @@
 >
 > [《JavaScript 深入之 call 和 apply 的模拟实现》(作者：冴羽)【来源：掘金】](https://juejin.cn/post/6844903476477034510)
 >
-> [《JavaScript 深入之 bind 的模拟实现》(作者：冴羽)【来源：掘金】](https://juejin.cn/post/6844903476623835149)
+> [《JavaScript 深入之 bind 的模拟实现》(作者：mqyqingfeng)【来源：github】](https://github.com/mqyqingfeng/Blog/issues/12)
 
 [TOC]
 
@@ -188,7 +188,7 @@ const toStringFn = Object.prototype.toString.bing(obj, args)
 6. 新函数使用 apply 函数修正自己的 this 指向
    - bind 返回的函数即可以直接调用，又可以当做构造函数使用
    - 当直接调用的时候，新函数的 this 需指向 obj 或者 window
-   - 当被用作构造函数使用的时候，，新函数的 this 需指向自身的 this
+   - 当被用作构造函数使用的时候，新函数的 this 需指向自身的 this
 7. 修改 新函数的 prototype 指向 obj 或者 window 的 prototype，用以判断执行是以什么方式执行返回的新函数
 8. 在新函数中使用 apply 函数执行，传入修正后的 this，并传入参数
 9. 返回新函数的执行结果
@@ -196,31 +196,41 @@ const toStringFn = Object.prototype.toString.bing(obj, args)
 
 ```js
 Function.prototype.bind2 = function (context) {
+  if (typeof this !== 'function') {
+    throw new Error('Function.prototype.bind - what is trying to be bound is not callable')
+  }
+
   var self = this
   var args = Array.prototype.slice.call(arguments, 1)
 
-  var fbound = function () {
+  var fNOP = function () {}
+
+  var fBound = function () {
     var bindArgs = Array.prototype.slice.call(arguments)
-    // 当作为构造函数时，this 指向实例，self 指向绑定函数，因为下面一句 `fbound.prototype = this.prototype;`，已经修改了 fbound.prototype 为 绑定函数的 prototype，此时结果为 true，当结果为 true 的时候，this 指向实例。
+    // 当作为构造函数时，this 指向实例，self 指向绑定函数，因为下面一句 `fBound.prototype = this.prototype;`，已经修改了 fBound.prototype 为 绑定函数的 prototype，此时结果为 true，当结果为 true 的时候，this 指向实例。
     // 当作为普通函数时，this 指向 window，self 指向绑定函数，此时结果为 false，当结果为 false 的时候，this 指向绑定的 context。
-    return self.apply(this instanceof self ? this : context, args.concat(bindArgs))
+    return self.apply(this.constructor === fNOP ? this : context, args.concat(bindArgs))
   }
   // 修改返回函数的 prototype 为绑定函数的 prototype，实例就可以继承函数的原型中的值
-  fbound.prototype = this.prototype
   // 使用一个空函数进行中转
-  // var fNOP = function () {};
-  // fNOP.prototype = this.prototype
-  // fbound.prototype = new fNOP()
-  return fbound
+  if (this.prototype) {
+    fNOP.prototype = this.prototype
+  }
+  fBound.prototype = new fNOP()
+  return fBound
 }
 
 // function myBind() {
 //   let fn = this
 //   let [context, ...args] = arguments
+//   let fnFlag = function () {}
 //   let newFn = function () {
-//     return fn.apply(this instanceof fn ? this : context, [...args, ...arguments])
+//     return fn.apply(this instanceof fnFlag ? this : context, [...args, ...arguments])
 //   }
-//   newFn.prototype = fn.prototype
+//   if (fn.prototype) {
+//     fnFlag.prototype = fn.prototype
+//   }
+//   newFn.prototype = new fnFlag()
 //   return newFn
 // }
 ```
