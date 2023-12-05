@@ -9,6 +9,8 @@
 > [《JavaScript 深入之 call 和 apply 的模拟实现》(作者：冴羽)【来源：掘金】](https://juejin.cn/post/6844903476477034510)
 >
 > [《JavaScript 深入之 bind 的模拟实现》(作者：mqyqingfeng)【来源：github】](https://github.com/mqyqingfeng/Blog/issues/12)
+>
+> [《js 手动实现 bind 方法，超详细思路分析！》(作者：听风是风)【来源：博客园】](https://www.cnblogs.com/echolun/p/12178655.html)
 
 [TOC]
 
