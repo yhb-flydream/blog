@@ -1,7 +1,7 @@
 <!--
  * @Author: yaohebin
  * @Date: 2021-06-11 09:56:48
- * @LastEditTime: 2023-12-03 14:13:13
+ * @LastEditTime: 2024-01-23 09:43:39
  * @LastEditors: yaohebin
  * @Description: git
 -->
@@ -502,17 +502,12 @@ git config --global alias.s[缩略名] status[原名字]
 >
 > [《git 本地仓库关联到远程仓库》（作者：Mr.Hu.）【来源：CSDN】](https://blog.csdn.net/sinat_39049092/article/details/113417142)
 
-- git init
-  - 初始化 git 仓库
-- git remote add origin {remote git url}
-  - 设置远程 remote 地址
-- git pull origin main --rebase
-  - 拉取远程仓库 master 的文件
-- git branch --set-upstream-to=origin/main main
-  - 将本地分支设置为远程分支
-- git add .
-  - 将所有变更提交到本地仓库
-- git commit -m ''
-  - 提交注释
-- git push -u origin main（或者 git push --set-upstream origin main）
-  - 本地仓库推送到远程仓库
+1. git init【初始化 git 仓库】
+2. git remote add origin {remote git url}【设置远程 remote 地址】
+3. git pull origin main --rebase【拉取远程仓库 master 的文件】
+4. git branch --set-upstream-to=origin/main main【将本地分支设置为远程分支】
+5. git add .【将所有变更提交到本地仓库】
+6. git commit -m ''【提交注释】
+7. git push -u origin main（或者 git push --set-upstream origin main）【本地仓库推送到远程仓库】
+
+> **注意**：如果远程仓库为空仓库，可以省略 3、4 步骤
