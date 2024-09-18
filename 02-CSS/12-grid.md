@@ -158,7 +158,7 @@ Grid 布局由网格容器（父元素）和网格项（子元素）组成
 
 ```css
 .container {
-  grid-template-areas: ' | . | none | ...' '...';
+  grid-template-areas: " | . | none | ..." "...";
 }
 ```
 
@@ -180,8 +180,357 @@ Grid 布局由网格容器（父元素）和网格项（子元素）组成
   grid-template-columns: 50px 50px 50px 50px;
   grid-template-rows: auto;
   grid-template-areas:
-    'header header header header'
-    'main main . sidebar'
-    'footer footer footer footer';
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
 }
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid;
+        margin: 100px auto 0;
+      }
+
+      .box {
+        display: grid;
+      }
+
+      /* -------------------- grid-template-columns -------------------- */
+      /* -------------------- grid-template-rows -------------------- */
+
+      /* .box {
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(3, 33.33%);
+      grid-template-rows: repeat(3, 33.33%);
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(3, 1fr);
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(3, calc(100% / 3));
+      grid-template-rows: repeat(3, calc(100% / 3));
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(auto-fill, 50px);
+      grid-template-rows: repeat(auto-fill, 50px);
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(auto-fit, 100px);
+      grid-template-rows: repeat(auto-fit, 50px);
+    } */
+      /* 
+    .box {
+      grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr;
+    } */
+
+      /* .box {
+      grid-template-columns: 200px 1fr 2fr;
+    } */
+
+      /* .box {
+      grid-template-columns: 50% 1fr 2fr;
+    } */
+
+      /* .box {
+      grid-template-columns: 20px 1fr minmax(100px, 1fr);
+    } */
+
+      /* .box {
+      grid-template-columns: 50px auto 100px;
+    } */
+
+      /* .box {
+      grid-template-columns: repeat(3, 1fr);
+    } */
+
+      /* -------------------- gap -------------------- */
+
+      /* .box {
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+    } */
+
+      /* .box {
+      row-gap: 20px;
+      column-gap: 20px;
+    } */
+
+      /* .box {
+      grid-gap: 20px 20px;
+    } */
+
+      /* .box {
+      grid-gap: 20px;
+    } */
+
+      /* .box {
+      gap: 20px;
+    } */
+
+      /* -------------------- grid-template-areas -------------------- */
+
+      /* .box {
+      grid-template-areas: 'a b c'
+        'd e f'
+        'g h i';
+    } */
+
+      /* .box {
+      grid-template-areas: 'a a a'
+        'b b b'
+        'c c c';
+    } */
+
+      /* .box {
+      grid-template-areas: 'a . c'
+        'd . f'
+        'g . i';
+    } */
+
+      /* -------------------- grid-auto-flow -------------------- */
+
+      /* .box {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    } */
+
+      /* .box {
+      grid-auto-flow: row;
+    } */
+
+      /* .box {
+      grid-auto-flow: column;
+    } */
+
+      /* .box {
+      grid-auto-flow: column dense;
+    } */
+
+      /* .item {} */
+
+      /* -------------------- items -------------------- */
+
+      /* .box {
+      grid-template-rows: 100px 50px 100px;
+      grid-template-columns: 100px 50px 100px;
+    } */
+
+      /* .box {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    } */
+
+      /* .box {
+      justify-items: start;
+      justify-items: center;
+      justify-items: end;
+      justify-items: stretch;
+    } */
+
+      /* .box {
+      align-items: start;
+      align-items: center;
+      align-items: end;
+      align-items: stretch;
+    } */
+
+      /* .box {
+      place-items: start;
+      place-items: stretch;
+      place-items: start center;
+      place-items: start end;
+      place-items: center start;
+      place-items: center;
+      place-items: center end;
+      place-items: end start;
+      place-items: end center;
+      place-items: end;
+    } */
+
+      /* -------------------- content -------------------- */
+
+      /* .box {
+      grid-template-rows: 100px 50px 100px;
+      grid-template-columns: 100px 50px 100px;
+    } */
+
+      /* .box {
+      justify-content: start;
+      justify-content: center;
+      justify-content: end;
+      justify-content: stretch;
+      justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: left;
+      justify-content: right;
+      justify-content: space-around;
+      justify-content: space-between;
+      justify-content: space-evenly;
+    } */
+
+      /* .box {
+      align-content: start;
+      align-content: center;
+      align-content: end;
+      align-content: stretch;
+      align-content: flex-start;
+      align-content: flex-end;
+      align-content: left;
+      align-content: right;
+      align-content: space-around;
+      align-content: space-between;
+      align-content: space-evenly;
+    } */
+
+      /* .box {
+      place-content: start;
+      place-content: center;
+      place-content: end;
+      place-content: stretch;
+      place-content: flex-start;
+      place-content: flex-end;
+      place-content: space-around;
+      place-content: space-between;
+      place-content: space-evenly;
+    } */
+
+      /* -------------------- auto -------------------- */
+
+      /* .box {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    } */
+
+      /* .item-1 {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    } */
+
+      /* .item-1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 4;
+    } */
+
+      /* .item-1 {
+      grid-column-start: span 2;
+      grid-row-start: span 2;
+    } */
+
+      /* .item-1 {
+      grid-column: 1 / 3;
+    } */
+
+      /* .item-1 {
+      grid-row: 1 / 3;
+    } */
+
+      /* .item-1 {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    } */
+
+      /* .item-1 {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    } */
+
+      /* -------------------- auto -------------------- */
+
+      /* .box {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 'a b c'
+        'd e f'
+        'g h i';
+    } */
+
+      /* .item-1 {
+      grid-area: e;
+    } */
+
+      /* .item-1 {
+      grid-area: 1/1/3/3;
+    } */
+
+      /* -------------------- auto -------------------- */
+
+      .box {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* .item-1 {
+      justify-self: start;
+      justify-self: center;
+      justify-self: end;
+      justify-self: stretch;
+      justify-self: flex-start;
+      justify-self: flex-end;
+      justify-self: left;
+      justify-self: right;
+    } */
+
+      /* .item-1 {
+      align-self: start;
+      align-self: center;
+      align-self: end;
+      align-self: stretch;
+      align-self: flex-start;
+      align-self: flex-end;
+    } */
+
+      .item-1 {
+        place-self: start;
+        place-self: start center;
+        place-self: start end;
+        place-self: center start;
+        place-self: center;
+        place-self: center end;
+        place-self: end start;
+        place-self: end center;
+        place-self: end;
+        place-self: stretch;
+        place-self: flex-start;
+        place-self: flex-start flex-end;
+        place-self: flex-end flex-start;
+        place-self: flex-end;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="item item-1">1</div>
+      <div class="item item-2">2</div>
+      <div class="item item-3">3</div>
+      <div class="item item-4">4</div>
+      <div class="item item-5">5</div>
+      <div class="item item-6">6</div>
+      <div class="item item-7">7</div>
+      <div class="item item-8">8</div>
+      <div class="item item-9">9</div>
+    </div>
+  </body>
+</html>
 ```
